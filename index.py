@@ -1,1 +1,1 @@
-import pymysql
+naam = input("Hallo wat is je naam ")
