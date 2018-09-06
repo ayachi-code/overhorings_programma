@@ -8,6 +8,9 @@ global woordenlijst_naam
 if (begin == "a"):
     print("woordenlijst maken")
     woordenlijst_naam = input("geef het bestand een naam ")
+    with open(woordenlijst_naam,"w+") as f:
+        bestand_lezen = f.write("hey")
+
 
 elif (begin == "b"):
     print("woorden leren")
