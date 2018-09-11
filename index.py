@@ -10,8 +10,9 @@ if (begin == "a"):
     print("woordenlijst maken")
     woordenlijst_naam = input("geef het bestand een naam ")
     mape = os.path.join('woordenlijsten',woordenlijst_naam)
-    with open(mape,"w+") as f:
-        bestand_lezen = f.write("hallo ")
+    
+   # with open(mape,"w+") as f:
+    #    bestand_lezen = f.write("hallo ")
 
 elif (begin == "b"):
     print("woorden leren")
