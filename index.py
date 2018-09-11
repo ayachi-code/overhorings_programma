@@ -18,7 +18,10 @@ if (begin == "a"):
     vertaal = input("Van welke taal wil je het vertalen ")
     taal = input("Welke taal ben ja aan het leren(woorden stampen) ")
     os.system("clear")
-    print("Oke type nu eerst de {} woord ".format(vertaal))
+    print("Oke type nu eerst de {} woorden ".format(vertaal))
+    while True:
+        woorden = input("type je {} woord ".format(vertaal))
+        
    # with open(mape,"w+") as f:
     #    bestand_lezen = f.write("hallo ")
 
