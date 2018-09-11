@@ -8,7 +8,7 @@ global vertaal
 
 naam = input("Hallo wat is je naam: ")
 os.system("clear")
-begin = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren ".format(naam))
+begin = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help ".format(naam))
 
 
 if (begin == "a"):
@@ -24,5 +24,7 @@ if (begin == "a"):
 
 elif (begin == "b"):
     print("woorden leren")
+elif (begin == "c"):
+    print("help krijgen")
 else:
     print("hey hey hey de ingevoerde letter is niet geldig")
