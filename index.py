@@ -5,6 +5,9 @@ global mape
 global taal
 global nederlands
 global vertaal
+global woorden
+global naam
+global vertaaaling
 
 naam = input("Hallo wat is je naam: ")
 os.system("clear")
@@ -22,7 +25,14 @@ if (begin == "a"):
     while True:
         woorden = input("type je {} woord ".format(vertaal))
         if woorden == "!":
-            break    
+            break
+    woorden = {"eten":"eat","appel":"apple"}
+    for naam in woorden.keys():
+        print(naam)
+    for vertaaaling in woorden.values():
+        print(vertaaaling)
+    
+    
    # with open(mape,"w+") as f:
     #    bestand_lezen = f.write("hallo ")
 
