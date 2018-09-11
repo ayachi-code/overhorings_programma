@@ -1,13 +1,15 @@
 import os
 
-naam = input("Hallo wat is je naam: ")
-os.system("clear")
-begin = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren ".format(naam))
 global woordenlijst_naam
 global mape
 global taal
 global nederlands
 global vertaal
+
+naam = input("Hallo wat is je naam: ")
+os.system("clear")
+begin = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren ".format(naam))
+
 
 if (begin == "a"):
     print("woordenlijst maken")
@@ -16,7 +18,7 @@ if (begin == "a"):
     vertaal = input("Van welke taal wil je het vertalen ")
     taal = input("Welke taal ben ja aan het leren(woorden stampen) ")
     os.system("clear")
-    print("Oke type nu eerst de nederlandse woord")
+    print("Oke type nu eerst de {} woord ".format(vertaal))
    # with open(mape,"w+") as f:
     #    bestand_lezen = f.write("hallo ")
 
