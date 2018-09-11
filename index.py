@@ -21,7 +21,8 @@ if (begin == "a"):
     print("Oke type nu eerst de {} woorden ".format(vertaal))
     while True:
         woorden = input("type je {} woord ".format(vertaal))
-        
+        if woorden == "!":
+            break    
    # with open(mape,"w+") as f:
     #    bestand_lezen = f.write("hallo ")
 
