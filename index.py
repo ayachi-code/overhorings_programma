@@ -7,14 +7,16 @@ global woordenlijst_naam
 global mape
 global taal
 global nederlands
+global vertaal
 
 if (begin == "a"):
     print("woordenlijst maken")
     woordenlijst_naam = input("geef het bestand een naam ")
     mape = os.path.join('woordenlijsten',woordenlijst_naam)
+    vertaal = input("Van welke taal wil je het vertalen ")
     taal = input("Welke taal ben ja aan het leren(woorden stampen) ")
     os.system("clear")
-
+    print("Oke type nu eerst de nederlandse woord")
    # with open(mape,"w+") as f:
     #    bestand_lezen = f.write("hallo ")
 
