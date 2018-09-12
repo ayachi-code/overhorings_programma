@@ -8,6 +8,7 @@ global vertaal
 global woorden
 global naam
 global vertaaaling
+global woorden2
 
 naam = input("Hallo wat is je naam: ")
 os.system("clear")
@@ -24,15 +25,15 @@ if (begin == "a"):
     print("Oke type nu eerst de {} woorden ".format(vertaal))
     while True:
         woorden = input("type je {} woord ".format(vertaal))
+        woorden2 = {vertaal:[],taal:[]} 
         if woorden == "!":
-            break
-    woorden = {"nederlands":["hallo","appel"],"engels":["hello","apple"]}   
-    for naam in woorden.keys():
+            break 
+    for naam in woorden2.keys():
         break
-    for vertaaaling in woorden.values():
+    for vertaaaling in woorden2.values():
         break
 
-    print(woorden["nederlands"])
+    print(woorden2)
 
    # with open(mape,"w+") as f:
     #    bestand_lezen = f.write("hallo ")
