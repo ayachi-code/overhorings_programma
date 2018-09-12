@@ -25,7 +25,8 @@ if (begin == "a"):
     print("Oke type nu eerst de {} woorden ".format(vertaal))
     while True:
         woorden = input("type je {} woord ".format(vertaal))
-        woorden2 = {vertaal:[],taal:[]} 
+        woorden2 = {vertaal:[],taal:[]}
+        woorden2[vertaal].append(woorden)
         if woorden == "!":
             break 
     for naam in woorden2.keys():
@@ -33,7 +34,7 @@ if (begin == "a"):
     for vertaaaling in woorden2.values():
         break
 
-    print(woorden2)
+    print(woorden2[vertaal])
 
    # with open(mape,"w+") as f:
     #    bestand_lezen = f.write("hallo ")
