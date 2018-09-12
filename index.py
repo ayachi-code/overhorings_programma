@@ -26,13 +26,12 @@ if (begin == "a"):
         woorden = input("type je {} woord ".format(vertaal))
         if woorden == "!":
             break
-    woorden = {"eten":"eat","appel":"apple"}
+    woorden = {"nederlands":["hallo"],"engels":["hello"]}   
     for naam in woorden.keys():
         print(naam)
     for vertaaaling in woorden.values():
         print(vertaaaling)
-    
-    
+
    # with open(mape,"w+") as f:
     #    bestand_lezen = f.write("hallo ")
 
