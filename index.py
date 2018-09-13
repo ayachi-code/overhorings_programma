@@ -1,5 +1,13 @@
 import os
 
+
+def main_program():
+    naam = input("Hallo wat is je naam: ")
+    os.system("clear")
+    begin = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help ".format(naam))
+
+
+"""
 global woordenlijst_naam
 global mape
 global taal
@@ -40,3 +48,4 @@ elif (begin == "c"):
     print("help krijgen")
 else:
     print("hey hey hey de ingevoerde letter is niet geldig")
+"""
