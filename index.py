@@ -13,16 +13,21 @@ class main(object):
         self.ingevoerde_woord = ingevoerde_woord
         self.naam_van_gebruiker = naam_van_gebruiker
         self.object_van_talen = object_van_talen
+    def begin_scherm(self):
+        self.naam = input("Hallo wat is je naam: ")
+        os.system("clear")
+        begin = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help ".format(naam))
 
 
-#global woordenlijst_naam
-#global mape
-#global taal
-#global vertaal
-#global woorden
-#global naam
-#global vertaaaling
-#global woorden2
+'''
+global woordenlijst_naam
+global mape
+global taal
+global vertaal
+global woorden
+global naam
+global vertaaaling
+global woorden2
 
 naam = input("Hallo wat is je naam: ")
 os.system("clear")
@@ -54,3 +59,6 @@ elif (begin == "c"):
     print("help krijgen")
 else:
     print("hey hey hey de ingevoerde letter is niet geldig")
+
+
+'''
