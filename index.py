@@ -1,14 +1,28 @@
+#Todo: mijn programma structuur geven
+
+
 import os
 
-global woordenlijst_naam
-global mape
-global taal
-global nederlands
-global vertaal
-global woorden
-global naam
-global vertaaaling
-global woorden2
+
+class main(object):
+    def __init__(self,woordenlijst_naam,map_naam,taal_2e,taal_die_je_weet,ingevoerde_woord,naam_van_gebruiker,object_van_talen):
+        self.woordenlijst_naam = woordenlijst_naam
+        self.map_naam = map_naam
+        self.taal_2e = taal_2e 
+        self.taal_die_je_weet = taal_die_je_weet
+        self.ingevoerde_woord = ingevoerde_woord
+        self.naam_van_gebruiker = naam_van_gebruiker
+        self.object_van_talen = object_van_talen
+
+
+#global woordenlijst_naam
+#global mape
+#global taal
+#global vertaal
+#global woorden
+#global naam
+#global vertaaaling
+#global woorden2
 
 naam = input("Hallo wat is je naam: ")
 os.system("clear")
@@ -25,7 +39,7 @@ if (begin == "a"):
     print("Oke type nu eerst de {} woorden ".format(vertaal))
     woorden2 = {vertaal:[],taal:[]}
     while True:
-        woorden = input("type je {} woord ".format(vertaal))
+        woorden = input("tgype je {} woord ".format(vertaal))
         woorden2[vertaal].append(woorden)
         print(woorden2[vertaal])
         if woorden == "!":
