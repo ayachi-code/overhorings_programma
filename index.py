@@ -2,10 +2,35 @@ import os
 
 
 def main_program():
-    naam = input("Hallo wat is je naam: ")
-    os.system("clear")
-    begin = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help ".format(naam))
+        naam = input("Hallo wat is je naam: ")
+        os.system("clear")
+        welkom = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help ".format(naam))
+        def woordenlijst_maken():
+            woordenlijst_naam = input("geef het bestand een naam ")
+            mape = os.path.join('woordenlijsten',woordenlijst_naam)
+            vertaal = input("Van welke taal wil je het vertalen ")
+            taal = input("Welke taal ben ja aan het leren(woorden stampen) ")
+            os.system("clear")
+            print("Oke type nu eerst de {} woorden ".format(vertaal))
+            woorden2 = {vertaal:[],taal:[]}
+            while True:
+                woorden = input("type je {} woord ".format(vertaal))
+                woorden2[vertaal].append(woorden)
+                print(woorden2[vertaal])
+                if woorden == "!":
+                    break 
+        if welkom == "a":
+            woordenlijst_maken()
+            print("woordenlijst maken")
+        elif (welkom == "b"):
+            print("woorden leren")
+        elif (welkom == "c"):
+            print("help krijgen")
+        else:
+            print("hey hey hey de ingevoerde letter is niet geldig")
+        
 
+main_program();
 
 """
 global woordenlijst_naam
