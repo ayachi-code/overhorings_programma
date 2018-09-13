@@ -13,12 +13,11 @@ def main_program():
             os.system("clear")
             print("Oke type nu eerst de {} woorden ".format(vertaal))
             woorden2 = {vertaal:[],taal:[]}
-            while True:
+            while woorden != "!":
                 woorden = input("type je {} woord ".format(vertaal))
                 woorden2[vertaal].append(woorden)
                 print(woorden2[vertaal])
-                if woorden == "!":
-                    break 
+
         if welkom == "a":
             woordenlijst_maken()
             print("woordenlijst maken")
