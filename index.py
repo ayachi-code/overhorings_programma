@@ -13,7 +13,7 @@ class main(object):
         self.ingevoerde_woord = ingevoerde_woord
         self.naam_van_gebruiker = naam_van_gebruiker
         self.object_van_talen = object_van_talen
-    def begin_scherm(self):
+    def begin_scherm(self,naam):
         self.naam = input("Hallo wat is je naam: ")
         os.system("clear")
         begin = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help ".format(naam))
