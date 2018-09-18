@@ -3,12 +3,13 @@
 import os
 
 
+def begroeting():
+    begroeting.naam = "hey"
 
 
 def welkom():
-    naam = input("Hallo wat is je naam: ")
     os.system("clear")
-    welkom.begin = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help ".format(naam))
+    welkom.begin = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help ".format(begroeting.naam))
 
 
 def woordenlijst_maken():
@@ -21,15 +22,16 @@ def woordenlijst_maken():
     print("Oke type nu eerst de {} woorden ".format(vertaal))
     woorden2 = {vertaal:[],taal:[]}
     while True:
-        woorden = input("tgype je {} woord ".format(vertaal))
+        woorden = input("type je {} woord ".format(vertaal))
+        woorden_die_je_stampt = input("type je {} woord ".format(taal))
         woorden2[vertaal].append(woorden)
-        print(woorden2[vertaal])
+        woorden2[taal].append(woorden_die_je_stampt)
         if woorden == "/stop":
-            break 
-
-
+            break
+    welkom()
 
 def main():
+    begroeting()
     welkom()
     if  welkom.begin == "a":
         woordenlijst_maken()
