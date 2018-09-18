@@ -3,14 +3,10 @@
 import os
 
 
-def begroeting():
-    naam_input = input("Welkom type je naam nogmaals te beginnen: ")
-    begroeting.naam = naam_input
-
 
 def welkom():
     os.system("clear")
-    welkom.begin = input("Welkom {} type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help ".format(begroeting.naam))
+    welkom.begin = input("Welkom type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help ")
 
 
 def woordenlijst_maken():
@@ -32,7 +28,6 @@ def woordenlijst_maken():
     main()
 
 def main():
-    begroeting()
     welkom()
     if  welkom.begin == "a":
         woordenlijst_maken()
