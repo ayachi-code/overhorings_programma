@@ -4,7 +4,8 @@ import os
 
 
 def begroeting():
-    begroeting.naam = "hey"
+    naam_input = input("Welkom type je naam nogmaals te beginnen: ")
+    begroeting.naam = naam_input
 
 
 def welkom():
@@ -28,7 +29,7 @@ def woordenlijst_maken():
         woorden2[taal].append(woorden_die_je_stampt)
         if woorden == "/stop":
             break
-    welkom()
+    main()
 
 def main():
     begroeting()
