@@ -1,5 +1,3 @@
-#Todo: mijn programma structuur geven
-
 import os
 
 
@@ -12,7 +10,7 @@ def welkom():
 def woordenlijst_maken():
     print("woordenlijst maken")
     woordenlijst_naam = input("geef het bestand een naam ")
-    mape = os.path.join('woordenlijsten',woordenlijst_naam)
+    mape = os.path.join('woordenlijsten',woordenlijst_naam)    
     vertaal = input("Van welke taal wil je het vertalen ")
     taal = input("Welke taal ben ja aan het leren(woorden stampen) ")
     os.system("clear")
@@ -23,6 +21,10 @@ def woordenlijst_maken():
         woorden_die_je_stampt = input("type je {} woord ".format(taal))
         woorden2[vertaal].append(woorden)
         woorden2[taal].append(woorden_die_je_stampt)
+        with open(woordenlijst_naam,"w+") as f:
+            f.write("\n".join(woorden2[vertaal]))
+            f.close()
+
         if woorden == "/stop":
             break
     main()
