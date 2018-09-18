@@ -19,9 +19,9 @@ def woordenlijst_maken():
         woorden2[vertaal].append(woorden)
         woorden2[taal].append(woorden_die_je_stampt)
         with open(mape,"w+") as f:
-            f.write("\n".join(woorden2[vertaal] + "c")
+            f.write("\n".join(woorden2[vertaal]) + "\n")
             f.close()
-            
+
         if woorden == "/stop":
             break
     main()
