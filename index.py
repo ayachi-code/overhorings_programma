@@ -11,7 +11,6 @@ def woordenlijst_maken():
     vertaal = input("Van welke taal wil je het vertalen ")
     taal = input("Welke taal ben ja aan het leren(woorden stampen) ")
     os.system("clear")
-    print("Oke type nu eerst de {} woorden ".format(vertaal))
     woorden2 = {vertaal:[],taal:[]}
     while True:
         woorden = input("type je {} woord ".format(vertaal))
@@ -19,7 +18,10 @@ def woordenlijst_maken():
         woorden2[vertaal].append(woorden)
         woorden2[taal].append(woorden_die_je_stampt)
         with open(mape,"w+") as f:
-            f.write("\n".join(woorden2[vertaal]) + "\n")
+            for taal_woorden,vertaal_woorden in zip(woorden2["vertaal"],woorden2["taal"])
+                #f.write("\n".join(woorden2[taal])+ "\n")
+                #print()
+                
             f.close()
 
         if woorden == "/stop":
