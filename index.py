@@ -18,9 +18,9 @@ def woordenlijst_maken():
         woorden2[vertaal].append(woorden)
         woorden2[taal].append(woorden_die_je_stampt)
         with open(mape,"w+") as f:
-            for taal_woorden,vertaal_woorden in zip(woorden2["vertaal"],woorden2["taal"])
-                #f.write("\n".join(woorden2[taal])+ "\n")
-                #print()
+            for vertaal_woorden,taal_woorden in zip(woorden2[vertaal],woorden2[taal]):
+                voledige_woord = vertaal_woorden + "=" + taal_woorden
+                f.write(voledige_woord + "\n")
                 
             f.close()
 
