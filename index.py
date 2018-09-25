@@ -44,10 +44,11 @@ def bestand_verwijderen():
     bestand_die_verwijderd_word = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
     if bestand_die_verwijderd_word == True:
         os.remove("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
+        main()
+
     else:
-        print("nee het bestand bestaat niet")
-
-
+        print("nee het bestand bestaat niet probeer het opnieuw")
+        
 
 def main():
     welkom()
