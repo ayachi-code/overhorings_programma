@@ -43,7 +43,7 @@ def bestand_verwijderen():
     bestand_die_je_wilt_verwijderen_naam = input("Hey welk bestand wil je verwijderen :) ")
     bestand_die_verwijderd_word = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
     if bestand_die_verwijderd_word == True:
-        print("bestand {} bestaat ".format(bestand_die_je_wilt_verwijderen_naam))
+        os.remove("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
     else:
         print("nee het bestand bestaat niet")
 
