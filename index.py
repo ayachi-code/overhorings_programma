@@ -2,7 +2,7 @@ import os
 
 def welkom():
     os.system("clear")
-    welkom.begin = input("Welkom type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help (e) voor exit ")
+    welkom.begin = input("Welkom type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help (e) voor exit type (r) om een bestand te verwijderen ")
 
 def woordenlijst_maken():
     print("woordenlijst maken")
@@ -28,12 +28,17 @@ def woordenlijst_maken():
             break
     main()
 
+def bestand_verwijderen():
+    pass
+
 def main():
     welkom()
     if  welkom.begin == "a":
         woordenlijst_maken()
     elif welkom.begin == "e":
         exit()
+    elif welkom.begin == "r":
+        bestand_verwijderen()
        
 
         
