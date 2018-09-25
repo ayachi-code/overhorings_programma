@@ -2,7 +2,7 @@ import os
 
 def welkom():
     os.system("clear")
-    welkom.begin = input("Welkom type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help ")
+    welkom.begin = input("Welkom type (a) om een woordenlijst te maken of (b) om de woorden te leren of (c) voor help (e) voor exit")
 
 def woordenlijst_maken():
     print("woordenlijst maken")
