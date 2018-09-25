@@ -33,9 +33,13 @@ def bestand_verwijderen():
     bestanden_in_woordenlijsten = os.listdir("woordenlijsten")
     if not bestanden_in_woordenlijsten:
         print("Er zijn geen woordenlijsten te vinden dus je kan niks verwijderen")
-    for bestand in bestanden_in_woordenlijsten:
-        print(bestand);
+    else:
+        for bestand in bestanden_in_woordenlijsten:
+            print(bestand);
     bestand_die_je_wilt_verwijderen_naam = input("Hey welk bestand wil je verwijderen :) ")
+    bestand_die_verwijderd_word = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
+    print(bestand_die_verwijderd_word)
+
 
 def main():
     welkom()
