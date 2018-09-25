@@ -2,7 +2,7 @@ import os
 
 def welkom():
     os.system("clear")
-    welkom.begin = input(" (a) om een woordenlijst te maken \n (b) om de woorden te leren \n (c) voor help \n (e) voor exit type \n (r) om een bestand te verwijderen ")
+    welkom.begin = input(" (a) om een woordenlijst te maken \n (b) om de woorden te leren \n (c) voor help \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
 
 def leesInput(tekst):
     resultaat = input(tekst)
