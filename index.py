@@ -29,8 +29,11 @@ def woordenlijst_maken():
     main()
 
 def bestand_verwijderen():
+    os.system("clear")
     bestanden_in_woordenlijsten = os.listdir("woordenlijsten")
-    print(bestanden_in_woordenlijsten)
+    for bestand in bestanden_in_woordenlijsten:
+        print(bestand);
+    bestand_die_je_wilt_verwijderen_naam = input("Hey welk bestand wil je verwijderen :) ")
 
 def main():
     welkom()
