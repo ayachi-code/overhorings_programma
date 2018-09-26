@@ -51,6 +51,7 @@ def bestand_verwijderen():
 
 def bestand_overhoren():
     os.system("clear")
+    bestand_die_je_wilt_gaan_overhoren = leesInput("Type het bestand naam die je wilt gaan overhoren: ")
     
 def main():
     welkom()
