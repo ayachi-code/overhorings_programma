@@ -49,6 +49,9 @@ def bestand_verwijderen():
         print("nee het bestand bestaat niet probeer het opnieuw")
         
 
+def bestand_overhoren():
+    pass
+
 def main():
     welkom()
     if  welkom.begin == "a":
@@ -57,8 +60,7 @@ def main():
         exit()
     elif welkom.begin == "r":
         bestand_verwijderen()
-       
-
-        
+    elif welkom.begin == "o":
+        bestand_overhoren()
 
 main()
