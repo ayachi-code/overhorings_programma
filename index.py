@@ -1,25 +1,25 @@
 import os
 
-def welkom():
-    os.system("clear")
-    welkom.begin = input(" (a) om een woordenlijst te maken \n (b) om de woorden te leren \n (c) voor help \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
-
 def leesInput(tekst):
     resultaat = input(tekst)
     return resultaat
 
+def welkom():
+    os.system("clear")
+    welkom.begin = leesInput(" (a) om een woordenlijst te maken \n (b) om de woorden te leren \n (c) voor help \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
+
 def woordenlijst_maken():
     # leesInput("woordenlijst maken")
     print("woordenlijst maken")
-    woordenlijst_naam = input("geef het bestand een naam ")
+    woordenlijst_naam = leesInput("geef het bestand een naam ")
     mape = os.path.join('woordenlijsten',woordenlijst_naam)    
-    vertaal = input("Van welke taal wil je het vertalen ")
-    taal = input("Welke taal ben ja aan het leren(woorden stampen) ")
+    vertaal = leesInput("Van welke taal wil je het vertalen ")
+    taal = leesInput("Welke taal ben ja aan het leren(woorden stampen) ")
     os.system("clear")
     woorden2 = {vertaal:[],taal:[]}
-    woorden = input("type je {} woord ".format(vertaal))
+    woorden = leesInput("type je {} woord ".format(vertaal))
     while woorden != "/stop":
-        woorden_die_je_stampt = input("type je {} woord ".format(taal))
+        woorden_die_je_stampt = leesInput("type je {} woord ".format(taal))
         woorden2[vertaal].append(woorden)
         woorden2[taal].append(woorden_die_je_stampt)
         with open(mape,"w+") as f:
@@ -28,7 +28,7 @@ def woordenlijst_maken():
                 f.write(voledige_woord + "\n")
                 
             f.close()
-        woorden = input("type je {} woord ".format(vertaal))
+        woorden = leesInput("type je {} woord ".format(vertaal))
 
     main()
 
@@ -40,7 +40,7 @@ def bestand_verwijderen():
     else:
         for bestand in bestanden_in_woordenlijsten:
             print(bestand);
-    bestand_die_je_wilt_verwijderen_naam = input("Hey welk bestand wil je verwijderen :) ")
+    bestand_die_je_wilt_verwijderen_naam = leesInput("Hey welk bestand wil je verwijderen :) ")
     bestand_die_verwijderd_word = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
     if bestand_die_verwijderd_word == True:
         os.remove("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
