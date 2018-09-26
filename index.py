@@ -50,14 +50,14 @@ def bestand_verwijderen():
         
 
 def bestand_overhoren():
-    pass
-
+    os.system("clear")
+    
 def main():
     welkom()
     if  welkom.begin == "a":
         woordenlijst_maken()
     elif welkom.begin == "e":
-        exit()
+        exit()              
     elif welkom.begin == "r":
         bestand_verwijderen()
     elif welkom.begin == "o":
