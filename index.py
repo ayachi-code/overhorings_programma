@@ -9,7 +9,6 @@ def welkom():
     welkom.begin = leesInput(" (a) om een woordenlijst te maken \n (b) om de woorden te leren \n (c) voor help \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
 
 def woordenlijst_maken():
-    # leesInput("woordenlijst maken")
     print("woordenlijst maken")
     woordenlijst_naam = leesInput("geef het bestand een naam ")
     mape = os.path.join('woordenlijsten',woordenlijst_naam)    
