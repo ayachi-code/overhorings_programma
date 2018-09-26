@@ -52,7 +52,13 @@ def bestand_verwijderen():
 def bestand_overhoren():
     os.system("clear")
     bestand_die_je_wilt_gaan_overhoren = leesInput("Type het bestand naam die je wilt gaan overhoren: ")
-    
+    bestand_die_verwijderd_word_overhoren = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren))
+    if bestand_die_verwijderd_word_overhoren == True:
+        print("bestand word geopend")
+    else:
+        print("hey bestand bestaat niet ")
+
+
 def main():
     welkom()
     if  welkom.begin == "a":
