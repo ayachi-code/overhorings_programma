@@ -68,11 +68,12 @@ def bestand_overhoren():
           lezen_lijst_van_woorden = bestand.split("\n")
           index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
           random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
+          print(lezen_lijst_van_woorden[random_nummer_van_index_lijst])
           woorden_user_overhoren = leesInput("Wat is hallo in het {}: ".format(leren_taal))
           while woorden_user_overhoren != "/stop":
               woorden_user_overhoren = leesInput("Wat is hallo in het {}: ".format(leren_taal))
-          
-     
+              
+
     else:
         print("hey bestand bestaat niet ")
 
