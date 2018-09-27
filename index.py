@@ -57,8 +57,11 @@ def bestand_overhoren():
     if bestand_die_verwijderd_word_overhoren == True:
         with open("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren),"r") as f:
           bestand_data = f.read()
-          lezen = bestand_data.split("\n")
-          print(lezen)
+          lezen_lijst_van_woorden = bestand_data.split("\n")
+          index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
+          random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
+          print(random_nummer_van_index_lijst)
+
     else:
         print("hey bestand bestaat niet ")
 
