@@ -6,7 +6,7 @@ def leesInput(tekst):
 
 def welkom():
     os.system("clear")
-    welkom.begin = leesInput(" (a) om een woordenlijst te maken \n (b) om de woorden te leren \n (c) voor help \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
+    welkom.begin = leesInput(" (a) om een woordenlijst te maken \n (b) om de woorden te leren  (c) voor help \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
 
 def woordenlijst_maken():
     print("woordenlijst maken")
@@ -56,7 +56,8 @@ def bestand_overhoren():
     if bestand_die_verwijderd_word_overhoren == True:
         with open("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren),"r") as f:
           bestand_data = f.read()
-          print(bestand_data)
+          lezen = bestand_data.split("\n")
+          print(lezen)
     else:
         print("hey bestand bestaat niet ")
 
