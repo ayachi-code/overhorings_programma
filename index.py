@@ -54,8 +54,9 @@ def bestand_overhoren():
     bestand_die_je_wilt_gaan_overhoren = leesInput("Type het bestand naam die je wilt gaan overhoren: ")
     bestand_die_verwijderd_word_overhoren = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren))
     if bestand_die_verwijderd_word_overhoren == True:
-        with open("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren),"w+") as f:
-          pass
+        with open("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren),"r") as f:
+          bestand_data = f.read()
+          print(bestand_data)
     else:
         print("hey bestand bestaat niet ")
 
