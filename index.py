@@ -59,18 +59,18 @@ def bestand_overhoren():
     if bestand_die_verwijderd_word_overhoren:
         with open("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren),"r+") as f:
           regel1 = f.readlines(1)
-          bestand_data = f.read()
-          bestand_data_string = "".join(regel1)
-          isgaatweg = bestand_data_string.replace("="," ")
+          bestand = f.read()
+          bestandstring = "".join(regel1)
+          isgaatweg = bestandstring.replace("="," ")
           geenspatie = isgaatweg.split(" ")
           leren_taal = geenspatie[1].replace("\n","")
           taal_begin = geenspatie[0]
-          lezen_lijst_van_woorden = bestand_data.split("\n")
+          lezen_lijst_van_woorden = bestand.split("\n")
           index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
           random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
           woorden_user_overhoren = leesInput("Wat is hallo in het {}: ".format(leren_taal))
           
-        
+     
     else:
         print("hey bestand bestaat niet ")
 
