@@ -15,6 +15,7 @@ def woordenlijst_maken():
     mape = os.path.join('woordenlijsten',woordenlijst_naam)    
     vertaal = leesInput("Van welke taal wil je het vertalen ")
     taal = leesInput("Welke taal ben ja aan het leren(woorden stampen) ")
+    mix = vertaal + "=" + taal
     os.system("clear")
     woorden2 = {vertaal:[],taal:[]}
     woorden = leesInput("type je {} woord ".format(vertaal))
@@ -23,6 +24,7 @@ def woordenlijst_maken():
         woorden2[vertaal].append(woorden)
         woorden2[taal].append(woorden_die_je_stampt)
         with open(mape,"w+") as f:
+            f.write(mix + "\n")
             for vertaal_woorden,taal_woorden in zip(woorden2[vertaal],woorden2[taal]):
                 voledige_woord = vertaal_woorden + "=" + taal_woorden
                 f.write(voledige_woord + "\n")
@@ -60,8 +62,8 @@ def bestand_overhoren():
           lezen_lijst_van_woorden = bestand_data.split("\n")
           index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
           random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
-          print(random_nummer_van_index_lijst)
-
+          woorden_user_overhoren = leesInput("Wat is hallo in het engels: ")
+        
     else:
         print("hey bestand bestaat niet ")
 
