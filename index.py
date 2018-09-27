@@ -60,12 +60,11 @@ def bestand_overhoren():
         with open("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren),"r+") as f:
           bestand_data_1 = f.readlines(1)
           bestand_data = f.read()
-          bestand_data_1_in_string = ''.join(bestand_data_1)
-          bestand_data_1_geen_nieuwlijn = a.replace("\n","")
+          #bestand_data_1_weg = bestand_data_1.split("\n")
           lezen_lijst_van_woorden = bestand_data.split("\n")
+          print(type(bestand_data_1))
           index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
           random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
-          print(b)
           woorden_user_overhoren = leesInput("Wat is hallo in het engels: ")
           
         
