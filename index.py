@@ -58,11 +58,12 @@ def bestand_overhoren():
     bestand_die_verwijderd_word_overhoren = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren))
     if bestand_die_verwijderd_word_overhoren == True:
         with open("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren),"r+") as f:
-          bestand_data_1 = f.readlines(1)
+          regel1 = f.readlines(1)
           bestand_data = f.read()
-          #bestand_data_1_weg = bestand_data_1.split("\n")
+          bestand_data_string = "".join(regel1)
+          print(bestand_data_string_geen_s)
+
           lezen_lijst_van_woorden = bestand_data.split("\n")
-          print(type(bestand_data_1))
           index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
           random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
           woorden_user_overhoren = leesInput("Wat is hallo in het engels: ")
