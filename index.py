@@ -57,12 +57,14 @@ def bestand_overhoren():
     bestand_die_je_wilt_gaan_overhoren = leesInput("Type het bestand naam die je wilt gaan overhoren: ")
     bestand_die_verwijderd_word_overhoren = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren))
     if bestand_die_verwijderd_word_overhoren == True:
-        with open("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren),"r") as f:
+        with open("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren),"r+") as f:
+          bestand_data_1 = f.readlines(1)
           bestand_data = f.read()
           lezen_lijst_van_woorden = bestand_data.split("\n")
           index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
           random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
           woorden_user_overhoren = leesInput("Wat is hallo in het engels: ")
+          
         
     else:
         print("hey bestand bestaat niet ")

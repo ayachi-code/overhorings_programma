@@ -1,3 +1,0 @@
-hallo=hello
-eten=eat
-lopen=walk
