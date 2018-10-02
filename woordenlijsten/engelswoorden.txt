@@ -1,0 +1,5 @@
+nederlands=engels
+hallo=hello
+eten=eat
+lopen=walk
+waar = true
