@@ -68,6 +68,9 @@ def bestand_overhoren():
           lezen_lijst_van_woorden = bestand.split("\n")
           index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
           random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
+          hele_woord_met_value = lezen_lijst_van_woorden[random_nummer_van_index_lijst]
+          gesplite_woord_lijst = hele_woord_met_value.split("=")
+          gesplit_woord_dic = dict(zip(gesplite_woord_lijst[::1],gesplite_woord_lijst[1::2]))
           woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(lezen_lijst_van_woorden[random_nummer_van_index_lijst],leren_taal))
           while woorden_user_overhoren != "/stop":
               random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
