@@ -72,10 +72,12 @@ def bestand_overhoren():
           lijst_die_de_woorden_apart_doet = []
           woordenlijst = {}
           for woord in lezen_lijst_van_woorden:
-              woord_taal,woord_vertaal = woord.split("=")
-              lijst_die_de_woorden_apart_doet.append(woord_taal)
-              print(lijst_die_de_woorden_apart_doet)
-             
+            woord_taal,woord_vertaal = woord.split("=")
+            lijst_die_de_woorden_apart_doet.append(woord_taal)
+            lijst_die_de_woorden_apart_doet.append(woord_vertaal)  
+            woordenlijst[woord_taal] = woord_vertaal
+
+          print(woordenlijst)
           #woord_nl, woord_eng = hele_woord_met_value.split("=")
           #woordenlijst[woord_nl] = woord_eng
           woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(lezen_lijst_van_woorden[random_nummer_van_index_lijst],leren_taal))
