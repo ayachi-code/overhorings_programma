@@ -79,11 +79,18 @@ def bestand_overhoren():
 
           random_key = random.choice(list(woordenlijst.keys()))
           woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
+          if woorden_user_overhoren == woordenlijst[random_key]:
+              print("juist")
+          else:
+              print("fout")
           while woorden_user_overhoren != "/stop":
                 random_key = random.choice(list(woordenlijst.keys()))
                 random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
                 woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
-           
+                if woorden_user_overhoren == woordenlijst[random_key]:
+                    print("juist")
+                else:
+                    print("fout")
 
               
     else:

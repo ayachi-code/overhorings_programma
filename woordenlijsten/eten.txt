@@ -1,4 +1,8 @@
 nederlands=engels
 hallo=hello
 lopen=walk
-a=a
+eten=eat
+just=net
+zwemmen=swim
+waar=true
+fout=false
