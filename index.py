@@ -77,13 +77,12 @@ def bestand_overhoren():
             lijst_die_de_woorden_apart_doet.append(woord_vertaal)  
             woordenlijst[woord_taal] = woord_vertaal
 
-          print(woordenlijst)
-          #woord_nl, woord_eng = hele_woord_met_value.split("=")
-          #woordenlijst[woord_nl] = woord_eng
-          woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(lezen_lijst_van_woorden[random_nummer_van_index_lijst],leren_taal))
+          random_key = random.choice(list(woordenlijst.keys()))
+          woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
           while woorden_user_overhoren != "/stop":
+                random_key = random.choice(list(woordenlijst.keys()))
                 random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
-                woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(lezen_lijst_van_woorden[random_nummer_van_index_lijst],leren_taal))
+                woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
            
 
               
