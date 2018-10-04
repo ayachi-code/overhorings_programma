@@ -53,10 +53,11 @@ def bestand_verwijderen():
         
 
 def bestand_overhoren():
+    #begin vraagt van wat wil je overhoren
     os.system("clear")
     bestand_die_je_wilt_gaan_overhoren = leesInput("Type het bestand naam die je wilt gaan overhoren: ")
-    bestand_die_verwijderd_word_overhoren = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren))
-    if bestand_die_verwijderd_word_overhoren:
+    overhoren_bestaat = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren))
+    if overhoren_bestaat:
         with open("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren),"r+") as f:
           regel1 = f.readlines(1)
           bestand = f.read()
@@ -77,7 +78,6 @@ def bestand_overhoren():
             lijst_die_de_woorden_apart_doet.append(woord_vertaal)  
             woordenlijst[woord_taal] = woord_vertaal
             
-
           #pakt een random key van de dic woordenlijst  
           random_key = random.choice(list(woordenlijst.keys()))
           woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
