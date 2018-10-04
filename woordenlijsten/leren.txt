@@ -1,3 +1,4 @@
-nederlands=duits
-hallo=alloh
-ik=ich
+nederlands=engels
+hallo=hello
+waar=true
+lopen=walk

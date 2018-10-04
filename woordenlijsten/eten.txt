@@ -1,8 +1,0 @@
-nederlands=engels
-hallo=hello
-lopen=walk
-eten=eat
-just=net
-zwemmen=swim
-waar=true
-fout=false
