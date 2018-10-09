@@ -50,15 +50,21 @@ def bestand_verwijderen():
 
     else:
         print("nee het bestand bestaat niet probeer het opnieuw")
-        
 
-def bestand_overhoren():
-    #begin vraagt van wat wil je overhoren
+def welkom_bestand_overhoren():
     os.system("clear")
     bestand_die_je_wilt_gaan_overhoren = leesInput("Type het bestand naam die je wilt gaan overhoren: ")
     overhoren_bestaat = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren))
     if overhoren_bestaat:
-        with open("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren),"r+") as f:
+        return bestand_die_je_wilt_gaan_overhoren,True
+    else:
+        return False
+
+
+def bestand_overhoren():
+    bestaat = welkom_bestand_overhoren()
+    if bestaat[1]:
+        with open("woordenlijsten/{}".format(bestaat[0]),"r+") as f:
           regel1 = f.readlines(1)
           bestand = f.read()
           bestandstring = "".join(regel1)
