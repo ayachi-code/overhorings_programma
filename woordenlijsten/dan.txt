@@ -1,3 +1,0 @@
-nederlands=engels
-hallo=hello
-lopen=walk

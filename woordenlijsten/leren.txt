@@ -1,4 +1,3 @@
 nederlands=engels
 hallo=hello
-waar=true
-lopen=walk
+loop=walk

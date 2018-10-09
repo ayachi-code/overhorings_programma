@@ -34,14 +34,19 @@ def woordenlijst_maken():
 
     main()
 
-def bestand_verwijderen():
-    os.system("clear")
-    bestanden_in_woordenlijsten = os.listdir("woordenlijsten")
+
+def bestanden_van_woordenlijst_printen(naam):
+    bestanden_in_woordenlijsten = os.listdir(naam)
     if not bestanden_in_woordenlijsten:
         print("Er zijn geen woordenlijsten te vinden dus je kan niks verwijderen")
     else:
         for bestand in bestanden_in_woordenlijsten:
             print(bestand);
+
+
+def bestand_verwijderen():
+    os.system("clear")
+    bestanden_van_woordenlijst_printen("woordenlijsten")
     bestand_die_je_wilt_verwijderen_naam = leesInput("Hey welk bestand wil je verwijderen :) ")
     bestand_die_verwijderd_word = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
     if bestand_die_verwijderd_word == True:
@@ -53,6 +58,7 @@ def bestand_verwijderen():
 
 def welkom_bestand_overhoren():
     os.system("clear")
+    bestanden_van_woordenlijst_printen("woordenlijsten")
     bestand_die_je_wilt_gaan_overhoren = leesInput("Type het bestand naam die je wilt gaan overhoren: ")
     overhoren_bestaat = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren))
     if overhoren_bestaat:
@@ -84,20 +90,19 @@ def bestand_overhoren():
             lijst_die_de_woorden_apart_doet.append(woord_taal)
             lijst_die_de_woorden_apart_doet.append(woord_vertaal)  
             woordenlijst[woord_taal] = woord_vertaal
-            
-          #pakt een random key van de dic woordenlijst  
+
           random_key = random.choice(list(woordenlijst.keys()))
           woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
           if woorden_user_overhoren == woordenlijst[random_key]:
               print("juist")
           else:
-              print("fout")
+              print("fout hmmm")
           while woorden_user_overhoren != "/stop":
                 random_key = random.choice(list(woordenlijst.keys()))
                 random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
                 woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
                 if woorden_user_overhoren == woordenlijst[random_key]:
-                    print("juist goedzo")
+                    print("juist")
                 else:
                     print("fout hmmm")
 
