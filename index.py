@@ -1,5 +1,6 @@
 import os
 import random
+import time
 
 def leesInput(tekst):
     resultaat = input(tekst)
@@ -71,7 +72,6 @@ def welkom_bestand_overhoren():
 
 def bestand_overhoren():
     bestaat = welkom_bestand_overhoren()
-    print(bestaat)
     if bestaat[1]:
         with open("woordenlijsten/{}".format(bestaat[0]),"r+") as f:
           regel1 = f.readlines(1)
@@ -111,7 +111,9 @@ def bestand_overhoren():
 
               
     else:
-        print("hey bestand bestaat niet ")
+        print("hey bestand bestaat niet probeer het nog eens :) ")
+        time.sleep(2)
+        welkom_bestand_overhoren()
 
 
 def main():
