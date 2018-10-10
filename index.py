@@ -10,6 +10,15 @@ def welkom():
     os.system("clear")
     welkom.begin = leesInput(" (a) om een woordenlijst te maken \n (b) om de woorden te leren  (c) voor help \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
 
+
+def bestaat_bestand(naam): 
+    bestaat = os.path.isfile("woordenlijsten/{}".format(naam))
+    if bestaat:
+        return True
+    else: 
+        return False
+
+
 def maken():
     woordenlijst_naam = leesInput("geef het bestand een naam ")
     mape = os.path.join('woordenlijsten',woordenlijst_naam)    
@@ -34,10 +43,15 @@ def maken():
 
     main()
 
+def overschrijven_bestand():
+    #overschrijven = leesInput("Type het bestand naam dat je wilt overschrijven: ")
+    pass
+ 
 def woordenlijst_maken():
     check = leesInput("wil je een woordenlijst maken(m) of overschrijven(o): ")
     if check == "m":
         maken()
+        os.system("clear")
     elif check == "b":
         pass
       
@@ -54,7 +68,7 @@ def bestand_verwijderen():
     bestanden_van_woordenlijst_printen("woordenlijsten")
     bestand_die_je_wilt_verwijderen_naam = leesInput("Hey welk bestand wil je verwijderen :) ")
     bestand_die_verwijderd_word = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
-    if bestand_die_verwijderd_word == True:
+    if bestand_die_verwijderd_word:
         os.remove("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
         main()
 
@@ -91,13 +105,13 @@ def bestand_overhoren():
           hele_woord_met_value = lezen_lijst_van_woorden[random_nummer_van_index_lijst]
           lijst_die_de_woorden_apart_doet = []
           woordenlijst = {}
+          f.close()
           for woord in lezen_lijst_van_woorden:
             woord_taal,woord_vertaal = woord.split("=")
             lijst_die_de_woorden_apart_doet.append(woord_taal)
             lijst_die_de_woorden_apart_doet.append(woord_vertaal)  
             woordenlijst[woord_taal] = woord_vertaal
 
-          f.close()
           random_key = random.choice(list(woordenlijst.keys()))
           woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
           if woorden_user_overhoren == woordenlijst[random_key]:
@@ -129,4 +143,4 @@ def main():
     elif welkom.begin == "o":
         bestand_overhoren()
 
-main()
+#main()
