@@ -1,2 +1,0 @@
-nederlands=engels
-hallo=hello

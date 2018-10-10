@@ -10,14 +10,12 @@ def welkom():
     os.system("clear")
     welkom.begin = leesInput(" (a) om een woordenlijst te maken \n (b) om de woorden te leren  (c) voor help \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
 
-
 def bestaat_bestand(naam): 
     bestaat = os.path.isfile("woordenlijsten/{}".format(naam))
     if bestaat:
         return True
     else: 
         return False
-
 
 def maken():
     woordenlijst_naam = leesInput("geef het bestand een naam ")
@@ -44,8 +42,8 @@ def maken():
     main()
 
 def overschrijven_bestand():
-    #overschrijven = leesInput("Type het bestand naam dat je wilt overschrijven: ")
-    pass
+    overschrijven = leesInput("Type het bestand naam dat je wilt overschrijven: ")
+    
  
 def woordenlijst_maken():
     check = leesInput("wil je een woordenlijst maken(m) of overschrijven(o): ")
@@ -61,7 +59,7 @@ def bestanden_van_woordenlijst_printen(naam):
         print("Er zijn geen woordenlijsten te vinden dus je kan niks verwijderen")
     else:
         for bestand in bestanden_in_woordenlijsten:
-            print(bestand);
+            print(bestand)
 
 def bestand_verwijderen():
     os.system("clear")
@@ -73,7 +71,7 @@ def bestand_verwijderen():
         main()
     else:
         print("nee het bestand bestaat niet probeer het opnieuw")
-        
+
 def welkom_bestand_overhoren():
     os.system("clear")
     bestanden_van_woordenlijst_printen("woordenlijsten")
@@ -83,7 +81,6 @@ def welkom_bestand_overhoren():
         return bestand_die_je_wilt_gaan_overhoren,True
     else:
         return bestand_die_je_wilt_gaan_overhoren,False
-
 
 def bestand_overhoren():
     bestaat = welkom_bestand_overhoren()
@@ -141,4 +138,4 @@ def main():
     elif welkom.begin == "o":
         bestand_overhoren()
 
-#main()
+main()
