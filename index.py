@@ -67,15 +67,13 @@ def bestand_verwijderen():
     os.system("clear")
     bestanden_van_woordenlijst_printen("woordenlijsten")
     bestand_die_je_wilt_verwijderen_naam = leesInput("Hey welk bestand wil je verwijderen :) ")
-    bestand_die_verwijderd_word = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
-    if bestand_die_verwijderd_word:
+    bestaat_het = bestaat_bestand(bestand_die_je_wilt_verwijderen_naam)
+    if bestaat_het:
         os.remove("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
         main()
-
     else:
         print("nee het bestand bestaat niet probeer het opnieuw")
-
-
+        
 def welkom_bestand_overhoren():
     os.system("clear")
     bestanden_van_woordenlijst_printen("woordenlijsten")
