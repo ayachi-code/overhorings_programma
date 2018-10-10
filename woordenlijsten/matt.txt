@@ -1,0 +1,4 @@
+nl=eng
+hallo=hello
+bar=bar
+eten=eten

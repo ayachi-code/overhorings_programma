@@ -35,7 +35,6 @@ def woordenlijst_maken():
 
     main()
 
-
 def bestanden_van_woordenlijst_printen(naam):
     bestanden_in_woordenlijsten = os.listdir(naam)
     if not bestanden_in_woordenlijsten:
@@ -43,7 +42,6 @@ def bestanden_van_woordenlijst_printen(naam):
     else:
         for bestand in bestanden_in_woordenlijsten:
             print(bestand);
-
 
 def bestand_verwijderen():
     os.system("clear")
@@ -56,7 +54,6 @@ def bestand_verwijderen():
 
     else:
         print("nee het bestand bestaat niet probeer het opnieuw")
-
 
 
 def welkom_bestand_overhoren():
@@ -94,6 +91,7 @@ def bestand_overhoren():
             lijst_die_de_woorden_apart_doet.append(woord_vertaal)  
             woordenlijst[woord_taal] = woord_vertaal
 
+          f.close()
           random_key = random.choice(list(woordenlijst.keys()))
           woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
           if woorden_user_overhoren == woordenlijst[random_key]:
@@ -114,7 +112,6 @@ def bestand_overhoren():
         print("hey bestand bestaat niet probeer het nog eens :) ")
         time.sleep(2)
         welkom_bestand_overhoren()
-
 
 def main():
     welkom()
