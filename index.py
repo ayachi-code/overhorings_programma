@@ -10,8 +10,7 @@ def welkom():
     os.system("clear")
     welkom.begin = leesInput(" (a) om een woordenlijst te maken \n (b) om de woorden te leren  (c) voor help \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
 
-def woordenlijst_maken():
-    print("woordenlijst maken")
+def maken():
     woordenlijst_naam = leesInput("geef het bestand een naam ")
     mape = os.path.join('woordenlijsten',woordenlijst_naam)    
     vertaal = leesInput("Van welke taal wil je het vertalen ")
@@ -35,6 +34,13 @@ def woordenlijst_maken():
 
     main()
 
+def woordenlijst_maken():
+    check = leesInput("wil je een woordenlijst maken(m) of overschrijven(o): ")
+    if check == "m":
+        maken()
+    elif check == "b":
+        pass
+      
 def bestanden_van_woordenlijst_printen(naam):
     bestanden_in_woordenlijsten = os.listdir(naam)
     if not bestanden_in_woordenlijsten:
@@ -103,11 +109,10 @@ def bestand_overhoren():
                 random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
                 woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
                 if woorden_user_overhoren == woordenlijst[random_key]:
-                    print("juist")
+                    print("juist goedzo")
                 else:
                     print("fout hmmm")
-
-              
+         
     else:
         print("hey bestand bestaat niet probeer het nog eens :) ")
         time.sleep(2)
