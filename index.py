@@ -62,7 +62,7 @@ def woordenlijst_maken():
     if check == "m":
         maken()
         os.system("clear")
-    elif check == "b":
+    elif check == "o":
         overschrijven()
       
 def bestand_verwijderen():
