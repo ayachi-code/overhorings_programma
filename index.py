@@ -66,6 +66,7 @@ def overschrijven():
             for woorden in bestand_geen_regel:
                nummer = bestand_geen_regel.index(woorden)
                print(str(nummer) + ": " + woorden)
+            welke = leesInput("Welke lijn wil je veranderen: ")
     else:
         print("bestand bestaat niet")
 
