@@ -1,0 +1,4 @@
+nederlands=engels
+hallo=hello
+doe=do
+waar=true

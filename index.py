@@ -17,6 +17,14 @@ def bestaat_bestand(naam):
     else: 
         return False
 
+def bestanden_van_woordenlijst_printen(naam):
+    bestanden_in_woordenlijsten = os.listdir(naam)
+    if not bestanden_in_woordenlijsten:
+        print("Er zijn geen woordenlijsten te vinden dus je kan niks verwijderen")
+    else:
+        for bestand in bestanden_in_woordenlijsten:
+            print(bestand)
+
 def maken():
     woordenlijst_naam = leesInput("geef het bestand een naam ")
     mape = os.path.join('woordenlijsten',woordenlijst_naam)    
@@ -41,26 +49,22 @@ def maken():
 
     main()
 
+
+def overschrijven():
+    bestanden_van_woordenlijst_printen("woordenlijsten")
+    overschrijven = leesInput("Welke bestand wil je overschrijven")
+
 def overschrijven_bestand():
     overschrijven = leesInput("Type het bestand naam dat je wilt overschrijven: ")
     
- 
 def woordenlijst_maken():
     check = leesInput("wil je een woordenlijst maken(m) of overschrijven(o): ")
     if check == "m":
         maken()
         os.system("clear")
     elif check == "b":
-        pass
+        overschrijven()
       
-def bestanden_van_woordenlijst_printen(naam):
-    bestanden_in_woordenlijsten = os.listdir(naam)
-    if not bestanden_in_woordenlijsten:
-        print("Er zijn geen woordenlijsten te vinden dus je kan niks verwijderen")
-    else:
-        for bestand in bestanden_in_woordenlijsten:
-            print(bestand)
-
 def bestand_verwijderen():
     os.system("clear")
     bestanden_van_woordenlijst_printen("woordenlijsten")
