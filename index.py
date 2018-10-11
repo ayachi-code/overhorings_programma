@@ -62,9 +62,9 @@ def overschrijven():
             bestand_geen_regel = bestand.split("\n")
             index_spatie = bestand_geen_regel.index('')
             del bestand_geen_regel[index_spatie]
-            print(bestand_geen_regel)
-          
             f.close()
+            for i in range(0,len(bestand_geen_regel)):
+               pass
     else:
         print("bestand bestaat niet")
 
