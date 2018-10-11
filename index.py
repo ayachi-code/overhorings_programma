@@ -60,7 +60,10 @@ def overschrijven():
             regel1 = f.readlines(1)
             bestand = f.read()
             bestand_geen_regel = bestand.split("\n")
+            index_spatie = bestand_geen_regel.index('')
+            del bestand_geen_regel[index_spatie]
             print(bestand_geen_regel)
+          
             f.close()
     else:
         print("bestand bestaat niet")
