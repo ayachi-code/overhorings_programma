@@ -56,7 +56,12 @@ def overschrijven():
     overschrijven = leesInput("Welke bestand wil je overschrijven: ")
     bestaat = bestaat_bestand(overschrijven)
     if bestaat:
-        print("bestand bestaat")
+        with open("woordenlijsten/{}".format(overschrijven),"r+") as f:
+            regel1 = f.readlines(1)
+            bestand = f.read()
+            bestand_geen_regel = bestand.split("\n")
+            print(bestand_geen_regel)
+            f.close()
     else:
         print("bestand bestaat niet")
 
