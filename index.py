@@ -54,6 +54,11 @@ def overschrijven():
     os.system("clear")
     bestanden_van_woordenlijst_printen("woordenlijsten")
     overschrijven = leesInput("Welke bestand wil je overschrijven: ")
+    bestaat = bestaat_bestand(overschrijven)
+    if bestaat:
+        print("bestand bestaat")
+    else:
+        print("bestand bestaat niet")
 
 def woordenlijst_maken():
     check = leesInput("wil je een woordenlijst maken(m) of overschrijven(o): ")
