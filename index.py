@@ -63,8 +63,9 @@ def overschrijven():
             index_spatie = bestand_geen_regel.index('')
             del bestand_geen_regel[index_spatie]
             f.close()
-            for i in range(0,len(bestand_geen_regel)):
-               pass
+            for woorden in bestand_geen_regel:
+               nummer = bestand_geen_regel.index(woorden)
+               print(str(nummer) + ": " + woorden)
     else:
         print("bestand bestaat niet")
 
