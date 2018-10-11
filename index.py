@@ -62,11 +62,12 @@ def overschrijven():
             bestand_geen_regel = bestand.split("\n")
             index_spatie = bestand_geen_regel.index('')
             del bestand_geen_regel[index_spatie]
-            f.close()
             for woorden in bestand_geen_regel:
                nummer = bestand_geen_regel.index(woorden)
                print(str(nummer) + ": " + woorden)
-            welke = leesInput("Welke lijn wil je veranderen: ")
+            welke = int(leesInput("Welke lijn wil je veranderen: "))
+            som_welke = welke + 2
+            f.close()
     else:
         print("bestand bestaat niet")
 
