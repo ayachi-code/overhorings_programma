@@ -51,12 +51,10 @@ def maken():
 
 
 def overschrijven():
+    os.system("clear")
     bestanden_van_woordenlijst_printen("woordenlijsten")
-    overschrijven = leesInput("Welke bestand wil je overschrijven")
+    overschrijven = leesInput("Welke bestand wil je overschrijven: ")
 
-def overschrijven_bestand():
-    overschrijven = leesInput("Type het bestand naam dat je wilt overschrijven: ")
-    
 def woordenlijst_maken():
     check = leesInput("wil je een woordenlijst maken(m) of overschrijven(o): ")
     if check == "m":
