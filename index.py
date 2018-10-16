@@ -68,7 +68,7 @@ def overschrijven():
                 lengte += 1
                 print(str(lengte) + " " + woorden)
                 bestand_in_array[lengte] = woorden
-            print(bestand_in_array)
+            print(bestand_in_array["1"])
             f.close()
     else:
         print("bestand bestaat niet")
