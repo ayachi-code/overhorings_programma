@@ -71,8 +71,9 @@ def overschrijven():
             welke = int(input("Welke lijn wil je wijzigen: "))
             naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
             bestand_in_array[welke] = naar
-            print(bestand_in_array)
+            open("woordenlijsten/{}".format(overschrijven), 'w').close()
             f.close()
+
     else:
         print("bestand bestaat niet")
 
