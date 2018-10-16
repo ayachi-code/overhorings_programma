@@ -56,9 +56,9 @@ def overschrijven():
     overschrijven = leesInput("Welke bestand wil je overschrijven: ")
     bestaat = bestaat_bestand(overschrijven)
     if bestaat:
-        bestand_in_array =  {}
         with open("woordenlijsten/{}".format(overschrijven),"r+") as f:
             regel1 = f.readlines(1)
+            bestand_in_array =  {1:regel1[0]}
             lengte = 1
             bestand = f.read()
             bestand_geen_regel = bestand.split("\n")
@@ -71,8 +71,13 @@ def overschrijven():
             welke = int(input("Welke lijn wil je wijzigen: "))
             naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
             bestand_in_array[welke] = naar
-            open("woordenlijsten/{}".format(overschrijven), 'w').close()
-            f.close()
+            print(bestand_in_array)
+ 
+        openfile = open("woordenlijsten/{}".format(overschrijven), 'w').close()
+        for line, linecontent in openfile.items():
+            openfile.write(linecontent)
+
+        f.close()
 
     else:
         print("bestand bestaat niet")

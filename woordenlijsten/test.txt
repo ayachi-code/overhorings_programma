@@ -1,0 +1,3 @@
+nederlands=engels
+eten=eat
+hallo=hello
