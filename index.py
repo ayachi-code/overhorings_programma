@@ -56,17 +56,19 @@ def overschrijven():
     overschrijven = leesInput("Welke bestand wil je overschrijven: ")
     bestaat = bestaat_bestand(overschrijven)
     if bestaat:
+        bestand_in_array =  {}
         with open("woordenlijsten/{}".format(overschrijven),"r+") as f:
             regel1 = f.readlines(1)
+            lengte = 1
             bestand = f.read()
             bestand_geen_regel = bestand.split("\n")
             index_spatie = bestand_geen_regel.index('')
             del bestand_geen_regel[index_spatie]
             for woorden in bestand_geen_regel:
-               nummer = bestand_geen_regel.index(woorden)
-               print(str(nummer) + ": " + woorden)
-            welke = int(leesInput("Welke lijn wil je veranderen: "))
-            som_welke = welke + 2
+                lengte += 1
+                print(str(lengte) + " " + woorden)
+                bestand_in_array[lengte] = woorden
+            print(bestand_in_array)
             f.close()
     else:
         print("bestand bestaat niet")
@@ -157,3 +159,11 @@ def main():
         bestand_overhoren()
 
 main()
+
+#test
+
+#a = ["hallo=hello",'eten=eat']
+#lengte = 0
+#for b in a:
+#    lengte += 1
+#    print(str(lengte) + " " + b)
