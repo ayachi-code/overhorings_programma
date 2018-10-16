@@ -68,7 +68,10 @@ def overschrijven():
                 lengte += 1
                 print(str(lengte) + " " + woorden)
                 bestand_in_array[lengte] = woorden
-            print(bestand_in_array["1"])
+            welke = int(input("Welke lijn wil je wijzigen: "))
+            naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
+            bestand_in_array[welke] = naar
+            print(bestand_in_array)
             f.close()
     else:
         print("bestand bestaat niet")
