@@ -72,10 +72,10 @@ def overschrijven():
             naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
             bestand_in_array[welke] = naar
             print(bestand_in_array)
+            open("woordenlijsten/{}".format(overschrijven),"w").close()
             for index in bestand_in_array:
                 print(bestand_in_array[index])
-            open("woordenlijsten/{}".format(overschrijven),"w").close()
-
+                f.write(bestand_in_array[index] + "\n")
         f.close()
 
     else:
@@ -167,14 +167,3 @@ def main():
         bestand_overhoren()
 
 main()
-
-#test
-
-#a = ["hallo=hello",'eten=eat']
-#lengte = 0
-#for b in a:
-#    lengte += 1
-#    print(str(lengte) + " " + b)
-
-
-
