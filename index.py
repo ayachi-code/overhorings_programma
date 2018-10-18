@@ -74,7 +74,8 @@ def overschrijven():
             print(bestand_in_array)
             for index in bestand_in_array:
                 print(bestand_in_array[index])
- 
+            open("woordenlijsten/{}".format(overschrijven),"w").close()
+
         f.close()
 
     else:

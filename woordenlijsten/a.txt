@@ -1,0 +1,3 @@
+nederlands=engels
+hallo=hello
+speel=play
