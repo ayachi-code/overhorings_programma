@@ -58,7 +58,9 @@ def overschrijven():
     if bestaat:
         with open("woordenlijsten/{}".format(overschrijven),"r+") as f:
             regel1 = f.readlines(1)
-            bestand_in_array =  {1:regel1[0]}
+            a = regel1[0].split("\n")
+            bestand_in_array = {} 
+            bestand_in_array[1] = a[0]
             lengte = 1
             bestand = f.read()
             bestand_geen_regel = bestand.split("\n")
@@ -71,11 +73,11 @@ def overschrijven():
             welke = int(input("Welke lijn wil je wijzigen: "))
             naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
             bestand_in_array[welke] = naar
-            print(bestand_in_array)
             open("woordenlijsten/{}".format(overschrijven),"w").close()
             for index in bestand_in_array:
+                print(index)
                 print(bestand_in_array[index])
-                f.write(bestand_in_array[index] + "\n")
+                f.write("test \n")
         f.close()
 
     else:
