@@ -72,11 +72,9 @@ def overschrijven():
             naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
             bestand_in_array[welke] = naar
             print(bestand_in_array)
+            for a in bestand_in_array:
+                print(bestand_in_array[a])
  
-        openfile = open("woordenlijsten/{}".format(overschrijven), 'w').close()
-        for line, linecontent in openfile.items():
-            openfile.write(linecontent)
-
         f.close()
 
     else:
@@ -176,3 +174,6 @@ main()
 #for b in a:
 #    lengte += 1
 #    print(str(lengte) + " " + b)
+
+
+
