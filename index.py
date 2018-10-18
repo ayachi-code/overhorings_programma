@@ -72,8 +72,8 @@ def overschrijven():
             naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
             bestand_in_array[welke] = naar
             print(bestand_in_array)
-            for a in bestand_in_array:
-                print(bestand_in_array[a])
+            for index in bestand_in_array:
+                print(bestand_in_array[index])
  
         f.close()
 
