@@ -100,8 +100,12 @@ def bestand_verwijderen():
     if bestaat_het:
         os.remove("woordenlijsten/{}".format(bestand_die_je_wilt_verwijderen_naam))
         main()
+    elif bestand_die_je_wilt_verwijderen_naam == "/stop":
+        main()
     else:
         print("nee het bestand bestaat niet probeer het opnieuw")
+        time.sleep(1)
+        bestand_verwijderen()
 
 def welkom_bestand_overhoren():
     os.system("clear")
