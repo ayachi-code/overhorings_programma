@@ -8,7 +8,7 @@ def leesInput(tekst):
 
 def welkom():
     os.system("clear")
-    welkom.begin = leesInput(" (a) om een woordenlijst te maken \n (b) om de woorden te leren  (c) voor help \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
+    welkom.begin = leesInput(" (a) om een woordenlijst te maken  \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
 
 def bestaat_bestand(naam): 
     bestaat = os.path.isfile("woordenlijsten/{}".format(naam))
@@ -79,6 +79,7 @@ def overschrijven():
                 print(bestand_in_array[index])
                 f.write(bestand_in_array[index] + "\n")
         f.close()
+        main()
 
     else:
         print("bestand bestaat niet")
@@ -167,5 +168,9 @@ def main():
         bestand_verwijderen()
     elif welkom.begin == "o":
         bestand_overhoren()
+    else:
+        print("hmm ingevoerede karakter bestaat niet ")
+        time.sleep(1)
+        main()
 
 main()
