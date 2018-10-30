@@ -77,7 +77,7 @@ def overschrijven():
             for index in bestand_in_array:
                 print(index)
                 print(bestand_in_array[index])
-                f.write("test \n")
+                f.write(bestand_in_array[index] + "\n")
         f.close()
 
     else:
