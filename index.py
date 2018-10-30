@@ -91,7 +91,13 @@ def woordenlijst_maken():
         os.system("clear")
     elif check == "o":
         overschrijven()
-      
+    elif check == "/stop":
+        main()
+    else:
+        print("Er word een foute karakter ingevoerd")
+        woordenlijst_maken()
+
+        
 def bestand_verwijderen():
     os.system("clear")
     bestanden_van_woordenlijst_printen("woordenlijsten")
