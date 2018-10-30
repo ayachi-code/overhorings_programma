@@ -118,10 +118,13 @@ def welkom_bestand_overhoren():
     bestanden_van_woordenlijst_printen("woordenlijsten")
     bestand_die_je_wilt_gaan_overhoren = leesInput("Type het bestand naam die je wilt gaan overhoren: ")
     overhoren_bestaat = os.path.isfile("woordenlijsten/{}".format(bestand_die_je_wilt_gaan_overhoren))
-    if overhoren_bestaat:
-        return bestand_die_je_wilt_gaan_overhoren,True
+    if bestand_die_je_wilt_gaan_overhoren == "/stop":
+        main()
     else:
-        return bestand_die_je_wilt_gaan_overhoren,False
+        if overhoren_bestaat:
+            return bestand_die_je_wilt_gaan_overhoren,True
+        else:
+            return bestand_die_je_wilt_gaan_overhoren,False
 
 def bestand_overhoren():
     bestaat = welkom_bestand_overhoren()
