@@ -2,6 +2,25 @@ import os
 import random
 import time
 
+def o_lezen(naam):
+    with open("woordenlijsten/{}".format(naam),"r+") as f:
+            regel1 = f.readlines(1)
+            a = regel1[0].split("\n")
+            bestand_in_array = {} 
+            bestand_in_array[1] = a[0]
+            lengte = 1
+            bestand = f.read()
+            bestand_geen_regel = bestand.split("\n")
+            index_spatie = bestand_geen_regel.index('')
+            del bestand_geen_regel[index_spatie]
+            for woorden in bestand_geen_regel:
+                lengte += 1
+                print(str(lengte) + " " + woorden)
+                bestand_in_array[lengte] = woorden
+            f.close()
+            return bestand_in_array
+
+
 def leesInput(tekst):
     resultaat = input(tekst)
     return resultaat
@@ -83,7 +102,7 @@ def overschrijven():
 
             c.close()
             main()
-  
+
     else:
         print("bestand bestaat niet")
 
