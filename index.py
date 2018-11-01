@@ -20,6 +20,19 @@ def o_lezen(overschrijven):
         m.close()
     return bestand_in_array
 
+def o_schrijven():
+    bestand_in_array = o_lezen()
+    with open("woordenlijsten/{}".format(overschrijven),"w") as c:
+        welke = int(input("Welke lijn wil je wijzigen: "))
+        naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
+        bestand_in_array[welke] = naar
+        for index in bestand_in_array:
+             print(index)
+             print(bestand_in_array[index])
+             c.write(bestand_in_array[index] + "\n")
+        c.close()
+        main()   
+
 def leesInput(tekst):
     resultaat = input(tekst)
     return resultaat
@@ -74,43 +87,8 @@ def overschrijven():
     overschrijven = leesInput("Welke bestand wil je overschrijven: ")
     bestaat = bestaat_bestand(overschrijven)
     if bestaat:
-        with open("woordenlijsten/{}".format(overschrijven),"r+") as f:
-            regel1 = f.readlines(1)
-            a = regel1[0].split("\n")
-            bestand_in_array = {} 
-            bestand_in_array[1] = a[0]
-            lengte = 1
-            bestand = f.read()
-            bestand_geen_regel = bestand.split("\n")
-            index_spatie = bestand_geen_regel.index('')
-            del bestand_geen_regel[index_spatie]
-            for woorden in bestand_geen_regel:
-                lengte += 1
-                print(str(lengte) + " " + woorden)
-                bestand_in_array[lengte] = woorden
-            f.close()
-
-        with open("woordenlijsten/{}".format(overschrijven),"w") as d:
-            welke = int(input("Welke lijn wil je wijzigen: "))
-            naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
-            bestand_in_array[welke] = naar
-            for index in bestand_in_array:
-                print(index)
-                print(bestand_in_array[index])
-                d.write(bestand_in_array[index] + "\n")
-            d.close()
-
-        with open("woordenlijsten/{}".format(overschrijven),"w") as c:
-            welke = int(input("Welke lijn wil je wijzigen: "))
-            naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
-            bestand_in_array[welke] = naar
-            for index in bestand_in_array:
-                print(index)
-                print(bestand_in_array[index])
-                c.write(bestand_in_array[index] + "\n")
-            c.close()
-            main()     
-
+        bestand_in_array = o_lezen(overschrijven)
+        o_schrijven()   
     else:
         print("bestand bestaat niet")
         main()
@@ -221,8 +199,4 @@ def main():
         time.sleep(1)
         main()
 
-#main()
-
-
-a = o_lezen("hallo.txt")
-print(a)
+main()
