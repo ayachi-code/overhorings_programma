@@ -2,25 +2,6 @@ import os
 import random
 import time
 
-def o_lezen(naam):
-    with open("woordenlijsten/{}".format(naam),"r+") as f:
-            regel1 = f.readlines(1)
-            a = regel1[0].split("\n")
-            bestand_in_array = {} 
-            bestand_in_array[1] = a[0]
-            lengte = 1
-            bestand = f.read()
-            bestand_geen_regel = bestand.split("\n")
-            index_spatie = bestand_geen_regel.index('')
-            del bestand_geen_regel[index_spatie]
-            for woorden in bestand_geen_regel:
-                lengte += 1
-                print(str(lengte) + " " + woorden)
-                bestand_in_array[lengte] = woorden
-            f.close()
-            return bestand_in_array
-
-
 def leesInput(tekst):
     resultaat = input(tekst)
     return resultaat
@@ -99,12 +80,12 @@ def overschrijven():
                 print(index)
                 print(bestand_in_array[index])
                 c.write(bestand_in_array[index] + "\n")
-
             c.close()
-            main()
+        main()     
 
     else:
         print("bestand bestaat niet")
+        main()
 
 def woordenlijst_maken():
     check = leesInput("wil je een woordenlijst maken(m) of overschrijven(o): ")
@@ -177,6 +158,8 @@ def bestand_overhoren():
           woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
           if woorden_user_overhoren == woordenlijst[random_key]:
               print("juist")
+          elif woorden_user_overhoren == "/stop":
+              main()
           else:
               print("fout hmmm")
           while woorden_user_overhoren != "/stop":
@@ -185,6 +168,8 @@ def bestand_overhoren():
                 woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
                 if woorden_user_overhoren == woordenlijst[random_key]:
                     print("juist goedzo")
+                elif woorden_user_overhoren == "/stop":
+                    main()
                 else:
                     print("fout hmmm")
          
