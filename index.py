@@ -71,7 +71,17 @@ def overschrijven():
                 print(str(lengte) + " " + woorden)
                 bestand_in_array[lengte] = woorden
             f.close()
-            
+
+        with open("woordenlijsten/{}".format(overschrijven),"w") as d:
+            welke = int(input("Welke lijn wil je wijzigen: "))
+            naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
+            bestand_in_array[welke] = naar
+            for index in bestand_in_array:
+                print(index)
+                print(bestand_in_array[index])
+                d.write(bestand_in_array[index] + "\n")
+            d.close()
+                 
         with open("woordenlijsten/{}".format(overschrijven),"w") as c:
             welke = int(input("Welke lijn wil je wijzigen: "))
             naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
@@ -81,7 +91,7 @@ def overschrijven():
                 print(bestand_in_array[index])
                 c.write(bestand_in_array[index] + "\n")
             c.close()
-        main()     
+            main()     
 
     else:
         print("bestand bestaat niet")
@@ -144,7 +154,7 @@ def bestand_overhoren():
           index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
           lezen_lijst_van_woorden.remove(lezen_lijst_van_woorden[index_van_lijst_woorden])
           random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
-          hele_woord_met_value = lezen_lijst_van_woorden[random_nummer_van_index_lijst]
+          #hele_woord_met_value = lezen_lijst_van_woorden[random_nummer_van_index_lijst]
           lijst_die_de_woorden_apart_doet = []
           woordenlijst = {}
           f.close()
