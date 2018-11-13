@@ -60,6 +60,9 @@ def bestanden_van_woordenlijst_printen(naam):
         for bestand in bestanden_in_woordenlijsten:
             print(bestand)
 
+def prepare_overhoren():
+    pass
+
 def maken():
     woordenlijst_naam = leesInput("geef het bestand een naam ")
     mape = os.path.join('woordenlijsten',woordenlijst_naam)    
@@ -150,12 +153,9 @@ def bestand_overhoren():
           isgaatweg = bestandstring.replace("="," ")
           geenspatie = isgaatweg.split(" ")
           leren_taal = geenspatie[1].replace("\n","")
-          taal_begin = geenspatie[0]
           lezen_lijst_van_woorden = bestand.split("\n")
           index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
           lezen_lijst_van_woorden.remove(lezen_lijst_van_woorden[index_van_lijst_woorden])
-          random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
-          #hele_woord_met_value = lezen_lijst_van_woorden[random_nummer_van_index_lijst]
           lijst_die_de_woorden_apart_doet = []
           woordenlijst = {}
           f.close()
@@ -164,7 +164,7 @@ def bestand_overhoren():
             lijst_die_de_woorden_apart_doet.append(woord_taal)
             lijst_die_de_woorden_apart_doet.append(woord_vertaal)  
             woordenlijst[woord_taal] = woord_vertaal
-
+            
           random_key = random.choice(list(woordenlijst.keys()))
           woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
           if woorden_user_overhoren == woordenlijst[random_key]:
@@ -175,7 +175,6 @@ def bestand_overhoren():
               print("fout hmmm")
           while woorden_user_overhoren != "/stop":
                 random_key = random.choice(list(woordenlijst.keys()))
-                random_nummer_van_index_lijst = random.randint(0,index_van_lijst_woorden)
                 woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
                 if woorden_user_overhoren == woordenlijst[random_key]:
                     print("juist goedzo")
