@@ -1,8 +1,9 @@
 import os
 import random
-import time
+import time 
 
 def o_lezen(overschrijven):
+    print(overschrijven)
     with open("woordenlijsten/{}".format(overschrijven),"r+") as m:
         regel1 = m.readlines(1)
         a = regel1[0].split("\n")
@@ -20,8 +21,11 @@ def o_lezen(overschrijven):
         m.close()
     return bestand_in_array
 
-def o_schrijven():
-    bestand_in_array = o_lezen()
+def o_schrijven(overschrijven):
+    os.system("clear")
+    bestand_in_array = o_lezen(overschrijven)
+    print(bestand_in_array)
+    print(overschrijven)
     with open("woordenlijsten/{}".format(overschrijven),"w") as c:
         welke = int(input("Welke lijn wil je wijzigen: "))
         naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
@@ -88,7 +92,8 @@ def overschrijven():
     bestaat = bestaat_bestand(overschrijven)
     if bestaat:
         bestand_in_array = o_lezen(overschrijven)
-        o_schrijven()   
+        print(bestand_in_array)
+        o_schrijven(overschrijven)   
     else:
         print("bestand bestaat niet")
         main()
