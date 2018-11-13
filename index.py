@@ -164,7 +164,7 @@ def bestand_overhoren():
             lijst_die_de_woorden_apart_doet.append(woord_taal)
             lijst_die_de_woorden_apart_doet.append(woord_vertaal)  
             woordenlijst[woord_taal] = woord_vertaal
-            
+
           random_key = random.choice(list(woordenlijst.keys()))
           woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
           if woorden_user_overhoren == woordenlijst[random_key]:
