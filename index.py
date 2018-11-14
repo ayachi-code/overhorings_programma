@@ -149,7 +149,7 @@ def woordenlijst_maken():
     elif check == "o":
         overschrijven()
     elif check == "/stop":
-        main()
+        return True
     else:
         print("Er word een foute karakter ingevoerd")
         woordenlijst_maken()
@@ -195,8 +195,9 @@ def bestand_overhoren():
 def main():
     keuzen = welkom()
     if  keuzen == "a":
-        woordenlijst_maken()
-    elif keuzen== "e":
+        while not (woordenlijst_maken()):
+            woordenlijst_maken()
+    elif keuzen == "e":
         exit()              
     elif keuzen == "r":
         bestand_verwijderen()
