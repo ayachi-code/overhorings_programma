@@ -37,6 +37,27 @@ def o_schrijven(overschrijven):
         c.close()
         main()   
 
+def prepare_overhoren(naam):
+    with open("woordenlijsten/{}".format(naam),"r+") as f:
+        regel1 = f.readlines(1)
+        bestand = f.read()
+        bestandstring = "".join(regel1)
+        isgaatweg = bestandstring.replace("="," ")
+        geenspatie = isgaatweg.split(" ")
+        leren_taal = geenspatie[1].replace("\n","")
+        lezen_lijst_van_woorden = bestand.split("\n")
+        index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
+        lezen_lijst_van_woorden.remove(lezen_lijst_van_woorden[index_van_lijst_woorden])
+        lijst_die_de_woorden_apart_doet = []
+        woordenlijst = {}
+        f.close()
+        for woord in lezen_lijst_van_woorden:
+            woord_taal,woord_vertaal = woord.split("=")
+            lijst_die_de_woorden_apart_doet.append(woord_taal)
+            lijst_die_de_woorden_apart_doet.append(woord_vertaal)  
+            woordenlijst[woord_taal] = woord_vertaal
+    return woordenlijst
+
 def leesInput(tekst):
     resultaat = input(tekst)
     return resultaat
@@ -59,9 +80,6 @@ def bestanden_van_woordenlijst_printen(naam):
     else:
         for bestand in bestanden_in_woordenlijsten:
             print(bestand)
-
-def prepare_overhoren():
-    pass
 
 def maken():
     woordenlijst_naam = leesInput("geef het bestand een naam ")
@@ -86,7 +104,6 @@ def maken():
         woorden = leesInput("type je {} woord ".format(vertaal))
 
     main()
-
 
 def overschrijven():
     os.system("clear")
@@ -113,8 +130,7 @@ def woordenlijst_maken():
     else:
         print("Er word een foute karakter ingevoerd")
         woordenlijst_maken()
-
-        
+     
 def bestand_verwijderen():
     os.system("clear")
     bestanden_van_woordenlijst_printen("woordenlijsten")
@@ -144,27 +160,9 @@ def welkom_bestand_overhoren():
             return bestand_die_je_wilt_gaan_overhoren,False
 
 def bestand_overhoren():
-    bestaat = welkom_bestand_overhoren()
-    if bestaat[1]:
-        with open("woordenlijsten/{}".format(bestaat[0]),"r+") as f:
-          regel1 = f.readlines(1)
-          bestand = f.read()
-          bestandstring = "".join(regel1)
-          isgaatweg = bestandstring.replace("="," ")
-          geenspatie = isgaatweg.split(" ")
-          leren_taal = geenspatie[1].replace("\n","")
-          lezen_lijst_van_woorden = bestand.split("\n")
-          index_van_lijst_woorden = len(lezen_lijst_van_woorden) - 1
-          lezen_lijst_van_woorden.remove(lezen_lijst_van_woorden[index_van_lijst_woorden])
-          lijst_die_de_woorden_apart_doet = []
-          woordenlijst = {}
-          f.close()
-          for woord in lezen_lijst_van_woorden:
-            woord_taal,woord_vertaal = woord.split("=")
-            lijst_die_de_woorden_apart_doet.append(woord_taal)
-            lijst_die_de_woorden_apart_doet.append(woord_vertaal)  
-            woordenlijst[woord_taal] = woord_vertaal
-
+    bestaat_bestand = welkom_bestand_overhoren()
+    if bestaat_bestand[1]:
+          woordenlijst = prepare_overhoren(bestaat_bestand[0])
           random_key = random.choice(list(woordenlijst.keys()))
           woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
           if woorden_user_overhoren == woordenlijst[random_key]:
