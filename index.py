@@ -58,6 +58,28 @@ def prepare_overhoren(naam):
             woordenlijst[woord_taal] = woord_vertaal
     return woordenlijst,leren_taal
 
+
+def overhoren_nu(naam):
+    woordenlijst = prepare_overhoren(naam)
+    random_key = random.choice(list(woordenlijst[0].keys()))
+    woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,woordenlijst[1]))
+    if woorden_user_overhoren == woordenlijst[0][random_key]:
+        print("juist")
+    elif woorden_user_overhoren == "/stop":
+        main()
+    else:
+        print("fout hmmm")
+    while woorden_user_overhoren != "/stop":
+        random_key = random.choice(list(woordenlijst[0].keys()))
+        woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,woordenlijst[1]))
+        if woorden_user_overhoren == woordenlijst[0][random_key]:
+            print("juist goedzo")
+        elif woorden_user_overhoren == "/stop":
+            main()
+        else:
+            print("fout hmmm")
+
+
 def leesInput(tekst):
     resultaat = input(tekst)
     return resultaat
@@ -164,23 +186,7 @@ def bestand_overhoren():
     if bestaat_bestand[1]:
           woordenlijst = prepare_overhoren(bestaat_bestand[0])
           random_key = random.choice(list(woordenlijst[0].keys()))
-          woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,woordenlijst[1]))
-          if woorden_user_overhoren == woordenlijst[0][random_key]:
-              print("juist")
-          elif woorden_user_overhoren == "/stop":
-              main()
-          else:
-              print("fout hmmm")
-          while woorden_user_overhoren != "/stop":
-                random_key = random.choice(list(woordenlijst[0].keys()))
-                woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,woordenlijst[1]))
-                if woorden_user_overhoren == woordenlijst[0][random_key]:
-                    print("juist goedzo")
-                elif woorden_user_overhoren == "/stop":
-                    main()
-                else:
-                    print("fout hmmm")
-         
+          overhoren_nu(bestaat_bestand[0]) 
     else:
         print("hey bestand bestaat niet probeer het nog eens :) ")
         time.sleep(2)
