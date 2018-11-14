@@ -56,7 +56,7 @@ def prepare_overhoren(naam):
             lijst_die_de_woorden_apart_doet.append(woord_taal)
             lijst_die_de_woorden_apart_doet.append(woord_vertaal)  
             woordenlijst[woord_taal] = woord_vertaal
-    return woordenlijst
+    return woordenlijst,leren_taal
 
 def leesInput(tekst):
     resultaat = input(tekst)
@@ -163,18 +163,18 @@ def bestand_overhoren():
     bestaat_bestand = welkom_bestand_overhoren()
     if bestaat_bestand[1]:
           woordenlijst = prepare_overhoren(bestaat_bestand[0])
-          random_key = random.choice(list(woordenlijst.keys()))
-          woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
-          if woorden_user_overhoren == woordenlijst[random_key]:
+          random_key = random.choice(list(woordenlijst[0].keys()))
+          woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,woordenlijst[1]))
+          if woorden_user_overhoren == woordenlijst[0][random_key]:
               print("juist")
           elif woorden_user_overhoren == "/stop":
               main()
           else:
               print("fout hmmm")
           while woorden_user_overhoren != "/stop":
-                random_key = random.choice(list(woordenlijst.keys()))
-                woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,leren_taal))
-                if woorden_user_overhoren == woordenlijst[random_key]:
+                random_key = random.choice(list(woordenlijst[0].keys()))
+                woorden_user_overhoren = leesInput("Wat is {} in het {}: ".format(random_key,woordenlijst[1]))
+                if woorden_user_overhoren == woordenlijst[0][random_key]:
                     print("juist goedzo")
                 elif woorden_user_overhoren == "/stop":
                     main()
