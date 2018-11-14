@@ -184,8 +184,7 @@ def welkom_bestand_overhoren():
 def bestand_overhoren():
     bestaat_bestand = welkom_bestand_overhoren()
     if bestaat_bestand[1]:
-          woordenlijst = prepare_overhoren(bestaat_bestand[0])
-          random_key = random.choice(list(woordenlijst[0].keys()))
+          prepare_overhoren(bestaat_bestand[0])
           overhoren_nu(bestaat_bestand[0]) 
     else:
         print("hey bestand bestaat niet probeer het nog eens :) ")
