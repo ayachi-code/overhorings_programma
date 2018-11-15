@@ -207,7 +207,8 @@ def main():
             bestand_overhoren()
         else:
             print("hmm ingevoerede karakter bestaat niet ")
+            time.sleep(1)
             keuzen = welkom()
-            return True
+            continue
     
 main()
