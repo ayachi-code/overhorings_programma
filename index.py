@@ -149,10 +149,11 @@ def woordenlijst_maken():
     elif check == "o":
         overschrijven()
     elif check == "/stop":
+        main()
         return True
     else:
         print("Er word een foute karakter ingevoerd")
-        woordenlijst_maken()
+        return False
      
 def bestand_verwijderen():
     os.system("clear")
