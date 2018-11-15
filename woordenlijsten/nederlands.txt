@@ -1,3 +1,3 @@
 nederlands=engels
-c=d
 eten=eat
+waar=true

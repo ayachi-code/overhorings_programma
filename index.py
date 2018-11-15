@@ -58,7 +58,6 @@ def prepare_overhoren(naam):
             woordenlijst[woord_taal] = woord_vertaal
     return woordenlijst,leren_taal
 
-
 def overhoren_nu(naam):
     woordenlijst = prepare_overhoren(naam)
     random_key = random.choice(list(woordenlijst[0].keys()))
@@ -66,7 +65,7 @@ def overhoren_nu(naam):
     if woorden_user_overhoren == woordenlijst[0][random_key]:
         print("juist")
     elif woorden_user_overhoren == "/stop":
-        main()
+        return
     else:
         print("fout hmmm")
     while woorden_user_overhoren != "/stop":
@@ -75,10 +74,9 @@ def overhoren_nu(naam):
         if woorden_user_overhoren == woordenlijst[0][random_key]:
             print("juist goedzo")
         elif woorden_user_overhoren == "/stop":
-            main()
+            return
         else:
             print("fout hmmm")
-
 
 def leesInput(tekst):
     resultaat = input(tekst)
