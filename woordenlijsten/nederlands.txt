@@ -1,3 +1,0 @@
-nederlands=engels
-eten=eat
-waar=true

@@ -3,7 +3,6 @@ import random
 import time 
 
 def o_lezen(overschrijven):
-    print(overschrijven)
     with open("woordenlijsten/{}".format(overschrijven),"r+") as m:
         regel1 = m.readlines(1)
         a = regel1[0].split("\n")
@@ -24,8 +23,6 @@ def o_lezen(overschrijven):
 def o_schrijven(overschrijven):
     os.system("clear")
     bestand_in_array = o_lezen(overschrijven)
-    print(bestand_in_array)
-    print(overschrijven)
     with open("woordenlijsten/{}".format(overschrijven),"w") as c:
         welke = int(input("Welke lijn wil je wijzigen: "))
         naar = input("Naar welke waarde wil je {}: ".format(bestand_in_array[welke]))
