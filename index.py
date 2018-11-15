@@ -205,5 +205,4 @@ def main():
             time.sleep(1)
             keuzen = welkom()
             continue
-    
 main()
