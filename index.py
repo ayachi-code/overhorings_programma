@@ -195,18 +195,19 @@ def bestand_overhoren():
 
 def main():
     keuzen = welkom()
-    if  keuzen == "a":
-        while not (woordenlijst_maken()):
-            woordenlijst_maken()
-    elif keuzen == "e":
-        exit()              
-    elif keuzen == "r":
-        bestand_verwijderen()
-    elif keuzen == "o":
-        bestand_overhoren()
-    else:
-        print("hmm ingevoerede karakter bestaat niet ")
-        time.sleep(1)
-        main()
-
+    while True:
+        if  keuzen == "a":
+            while not (woordenlijst_maken()):
+                woordenlijst_maken()
+        elif keuzen == "e":
+            exit()              
+        elif keuzen == "r":
+            bestand_verwijderen()
+        elif keuzen == "o":
+            bestand_overhoren()
+        else:
+            print("hmm ingevoerede karakter bestaat niet ")
+            keuzen = welkom()
+            return True
+    
 main()
