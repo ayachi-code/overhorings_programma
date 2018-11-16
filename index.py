@@ -10,7 +10,9 @@ def tip_geven():
     tip = input("Type je tip: ")
     if tip == "/stop":
         return
-    print("Bedankt voor je tip \n ")
+    else:
+        print("A \n")   
+        print("Bedankt voor je tip \n ")
 
 def top_geven():
     os.system("clear")
