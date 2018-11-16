@@ -1,10 +1,13 @@
 import os
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
 import random
 import time 
 
 def feedback():
     pass
-    
+
 def o_lezen(overschrijven):
     with open("woordenlijsten/{}".format(overschrijven),"r+") as m:
         regel1 = m.readlines(1)
@@ -195,7 +198,7 @@ def main():
     keuzen = welkom()
     while True:
         if keuzen == "f":
-            pass
+            feedback()
         if  keuzen == "a":
             while not (woordenlijst_maken()):
                 woordenlijst_maken()
