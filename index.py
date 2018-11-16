@@ -8,11 +8,15 @@ import time
 def tip_geven():
     os.system("clear")
     tip = input("Type je tip: ")
+    if tip == "/stop":
+        return
     print("Bedankt voor je tip \n ")
 
 def top_geven():
     os.system("clear")
     top = input("Type je top: ")
+    if top == "/stop":
+        return
     print("Bedankt voor je tip \n ")
 
 def feedback():
