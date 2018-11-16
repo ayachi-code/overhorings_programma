@@ -5,8 +5,23 @@ from firebase_admin import db
 import random
 import time 
 
+def tip_geven():
+    os.system("clear")
+    tip = input("Type je tip: ")
+    print("Bedankt voor je tip \n ")
+
+def top_geven():
+    os.system("clear")
+    top = input("Type je top: ")
+    print("Bedankt voor je tip \n ")
+
 def feedback():
-    pass
+    os.system("clear")
+    keuzen = input("Hey type t om een tip te geven en p om ene top tegeven: ")
+    if keuzen == "t":
+        tip_geven()
+    elif keuzen == "p":
+        top_geven()
 
 def o_lezen(overschrijven):
     with open("woordenlijsten/{}".format(overschrijven),"r+") as m:
@@ -87,7 +102,7 @@ def leesInput(tekst):
 
 def welkom():
     os.system("clear")
-    begin = leesInput(" (a) om een woordenlijst te maken  \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren ")
+    begin = leesInput(" (a) om een woordenlijst te maken  \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren \n (f) om een feedback tegeven ")
     return begin
 
 def bestaat_bestand(naam): 
@@ -197,11 +212,11 @@ def bestand_overhoren():
 def main():
     keuzen = welkom()
     while True:
-        if keuzen == "f":
-            feedback()
         if  keuzen == "a":
             while not (woordenlijst_maken()):
                 woordenlijst_maken()
+        elif keuzen == "f":
+            feedback()
         elif keuzen == "e":
             exit()              
         elif keuzen == "r":
