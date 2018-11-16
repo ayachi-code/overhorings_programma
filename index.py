@@ -191,6 +191,8 @@ def bestand_overhoren():
 def main():
     keuzen = welkom()
     while True:
+        if keuzen == "f":
+            pass
         if  keuzen == "a":
             while not (woordenlijst_maken()):
                 woordenlijst_maken()
