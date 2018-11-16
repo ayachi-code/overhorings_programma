@@ -2,6 +2,9 @@ import os
 import random
 import time 
 
+def feedback():
+    pass
+    
 def o_lezen(overschrijven):
     with open("woordenlijsten/{}".format(overschrijven),"r+") as m:
         regel1 = m.readlines(1)
