@@ -11,8 +11,10 @@ def tip_geven():
     if tip == "/stop":
         return
     else:
-        print("A \n")   
+        print("tip: ",format(tip))   
         print("Bedankt voor je tip \n ")
+        time.sleep(1)
+        return
 
 def top_geven():
     os.system("clear")
