@@ -17,18 +17,14 @@ firebase_admin.initialize_app(cred, {
 })
 
 database = db.reference('tips')
-a = database.child('test')
-a.set({
-    'naam': {
-    'a': 'b'
-    }
-        })
-
-
 def tipoftop_versturen(welke,zin):
-    if welke == True:
-        pass
-    elif welke == False:
+    if zin == True:
+        random_karakter = str(random.randint(1,123748904123789483021980232))
+        tip = database.child(random_karakter)
+        tip.set({
+            "naam": "bilal"
+        })
+    elif zin == False:
         pass
 
 def tip_geven():
