@@ -16,7 +16,14 @@ firebase_admin.initialize_app(cred, {
     }
 })
 
-database = db.reference('/tips')
+database = db.reference('tips')
+a = database.child('test')
+a.set({
+    'naam': {
+    'a': 'b'
+    }
+        })
+
 
 def tipoftop_versturen(welke,zin):
     if welke == True:
