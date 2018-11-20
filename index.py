@@ -5,12 +5,30 @@ from firebase_admin import db
 import random
 import time 
 
+#initialiseer de firbase SDK
+cred = credentials.Certificate('secret.json')
+
+#Databse conecteren
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://overhoring-1d14b.firebaseio.com/',
+    'databaseAuthVariableOverride': {
+        'uid': 'my-service-worker'
+    }
+})
+
+ref = db.reference('/tips')
+
+
+def tip_versturen(tip):
+    pass
+    
 def tip_geven():
     os.system("clear")
     tip = input("Type je tip: ")
     if tip == "/stop":
         return
     else:
+        tip_versturen(tip)
         print("tip: ",format(tip))   
         print("Bedankt voor je tip \n ")
         time.sleep(1)
