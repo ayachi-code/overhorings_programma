@@ -255,6 +255,19 @@ def bestand_overhoren():
         time.sleep(2)
         welkom_bestand_overhoren()
 
+def admin_inloggen():
+    pass
+    
+def admin():
+    os.system("clear")
+    keuzen = input("Type het admin wachtwoord: ")
+    if keuzen == "admin123":
+        print("het wachtwoord is juist")
+        admin_inloggen()
+    else:
+        print("Het wachtwoord is onjuist ")
+        time.sleep(1)
+
 def main():
     keuzen = welkom()
     while True:
@@ -264,11 +277,13 @@ def main():
         elif keuzen == "f":
             feedback()
         elif keuzen == "e":
-            exit()              
+            exit()           
         elif keuzen == "r":
             bestand_verwijderen()
         elif keuzen == "o":
             bestand_overhoren()
+        elif keuzen == "admin":
+            admin()
         else:
             print("hmm ingevoerede karakter bestaat niet ")
             time.sleep(1)
