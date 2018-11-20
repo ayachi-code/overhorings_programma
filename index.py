@@ -16,8 +16,7 @@ firebase_admin.initialize_app(cred, {
     }
 })
 
-ref = db.reference('/tips')
-
+database = db.reference('/tips')
 
 def tip_versturen(tip):
     pass
@@ -48,6 +47,8 @@ def feedback():
         tip_geven()
     elif keuzen == "p":
         top_geven()
+    elif keuzen == "/stop":
+        main()
 
 def o_lezen(overschrijven):
     with open("woordenlijsten/{}".format(overschrijven),"r+") as m:
