@@ -18,14 +18,22 @@ firebase_admin.initialize_app(cred, {
 
 database = db.reference('tips')
 def tipoftop_versturen(welke,zin):
-    if zin == True:
+    if zin:
         random_karakter = str(random.randint(1,123748904123789483021980232))
-        tip = database.child(random_karakter)
+        tip = database.child(random_karakter + "tip")
         tip.set({
-            "naam": "bilal"
+            "tip": {
+                "tip": "test" + welke
+            }
         })
     elif zin == False:
-        pass
+        random_karakter = str(random.randint(1,1237489041237894830219802328))
+        top = database.child(random_karakter + "top")
+        top.set({
+            "top": {
+                "top": welke
+            }
+        })
 
 def tip_geven():
     os.system("clear")
@@ -47,7 +55,7 @@ def top_geven():
     else:
         tipoftop_versturen(top,False)
         print("tip: ",format(top))  
-        print("Bedankt voor je tip \n ")
+        print("Bedankt voor je top \n ")
         time.sleep(1)
         return False
 
