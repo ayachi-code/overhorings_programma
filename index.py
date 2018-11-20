@@ -19,19 +19,22 @@ firebase_admin.initialize_app(cred, {
 database = db.reference('/tips')
 
 def tipoftop_versturen(welke,zin):
-    pass
-    
+    if welke == True:
+        pass
+    elif welke == False:
+        pass
+
 def tip_geven():
     os.system("clear")
     tip = input("Type je tip: ")
-    if tip == "/stop":xsxs
+    if tip == "/stop":
         return
     else:
         tipoftop_versturen(tip,True)
         print("tip: ",format(tip))   
         print("Bedankt voor je tip \n ")
         time.sleep(1)
-        return
+        return True
 
 def top_geven():
     os.system("clear")
@@ -43,7 +46,7 @@ def top_geven():
         print("tip: ",format(top))  
         print("Bedankt voor je tip \n ")
         time.sleep(1)
-        return
+        return False
 
 def feedback():
     os.system("clear")
