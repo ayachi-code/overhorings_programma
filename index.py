@@ -17,6 +17,10 @@ firebase_admin.initialize_app(cred, {
 })
 
 database = db.reference('tips')
+
+def woorden_lijst_delen(naam):
+    pass
+
 def tipoftop_versturen(welke,zin):
     if zin:
         random_karakter = str(random.randint(1,123748904123789483021980232))
@@ -255,23 +259,6 @@ def bestand_overhoren():
         time.sleep(2)
         welkom_bestand_overhoren()
 
-def admin_tips():
-    tips_en_tops = database.get()
-    print(tips_en_tops["100753620374930784104763942tip"]["tip"]["tip"])
-    keuze = leesInput("Type /stop om terug tegaan: ")
-
-def admin_inloggen():
-    keuze = input("Welkom type a om alle tips en tops te zien: ")
-    if keuze == "a":
-        admin_tips()
-
-def admin():
-    wachtwoord = input("Type het wachtwoord van het admin account: ")
-    if wachtwoord == "admin123":
-        admin_inloggen()
-    else:
-        print("Onjuist probeer nog eens")
-
 def main():
     keuzen = welkom()
     while True:
@@ -286,8 +273,6 @@ def main():
             bestand_verwijderen()
         elif keuzen == "o":
             bestand_overhoren()
-        elif keuzen == "admin":
-            admin()
         else:
             print("hmm ingevoerede karakter bestaat niet ")
             time.sleep(1)
