@@ -187,7 +187,7 @@ def maken():
             for vertaal_woorden,taal_woorden in zip(woorden2[vertaal],woorden2[taal]):
                 voledige_woord = vertaal_woorden + "=" + taal_woorden
                 f.write(voledige_woord + "\n")
-                
+
             f.close()
         woorden = leesInput("type je {} woord ".format(vertaal))
 
@@ -267,9 +267,7 @@ def woordenlijst_publish(naam):
         x.close()
     lijsten = database_lijsten.child(welke)
     lijsten.set({
-        "hallo": {
             "lijst": stringa
-        }
     })
     os.system("clear")
 
@@ -284,9 +282,11 @@ def woorden_lijst_zelf_delen(naam):
     else:
         print("bestand bestata niet ")
 
-
 def bestanden_beschikbaar():
-    pass
+    database_lijsten_ = database_lijsten.get()
+    alle = list(database_lijsten_.keys())
+    print(alle)
+    time.sleep(20)
 
 def lijst_importeren():
     os.system("clear")
@@ -336,3 +336,6 @@ def main():
             continue      
 
 main()
+
+
+#{'frans leren': {'hallo': {'lijst': 'nederlands=engels\na=l\neten=eat\n'}}, 'p': {'lijst': 'nederlands=engels\na=l\neten=eat\n'}}
