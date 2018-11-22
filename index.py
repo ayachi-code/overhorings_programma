@@ -18,8 +18,16 @@ firebase_admin.initialize_app(cred, {
 
 database = db.reference('tips')
 
-def woorden_lijst_delen(naam):
-    pass
+def woorden_lijst_delen():
+    os.system("clear")
+    welke = input("(p) om te importeren en (v) een lijst te delen: ")
+    if welke == "p":
+        pass
+    elif welke == "v":
+        pass
+    else:
+        print("karakter bestaat niet probeer opnieuw")
+        time.sleep(1)
 
 def tipoftop_versturen(welke,zin):
     if zin:
@@ -152,7 +160,7 @@ def leesInput(tekst):
 
 def welkom():
     os.system("clear")
-    begin = leesInput(" (a) om een woordenlijst te maken  \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren \n (f) om een feedback tegeven ")
+    begin = leesInput(" (a) om een woordenlijst te maken  \n (e) voor exit type \n (r) om een bestand te verwijderen \n (o) om een bestand te overhoren \n (f) om een feedback tegeven \n (p) om een lijst te delen/importeren ")
     return begin
 
 def bestaat_bestand(naam): 
@@ -273,6 +281,8 @@ def main():
             bestand_verwijderen()
         elif keuzen == "o":
             bestand_overhoren()
+        elif keuzen == "p":
+            woorden_lijst_delen()
         else:
             print("hmm ingevoerede karakter bestaat niet ")
             time.sleep(1)
