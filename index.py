@@ -269,6 +269,13 @@ def woorden_lijst_delen():
         os.system("clear")
         bestanden_van_woordenlijst_printen("woordenlijsten")
         welke = input("Welk bestand wil je gaan delen ? ")
+        bestaat = bestaat_bestand(welke)
+        if bestaat:
+            print("Bestand word gedeelt")
+            time.sleep(10)
+        else:
+            print("Bestand bestaat niet :( ")
+            time.sleep(10)
     else:
         print("karakter bestaat niet probeer opnieuw")
         time.sleep(1)
