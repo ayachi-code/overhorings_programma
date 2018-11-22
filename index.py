@@ -264,13 +264,14 @@ def woordenlijst_publish(naam):
         regeaa = x.readlines()
         stringa = ''.join(regeaa)
         x.close()
-    lijsten = database_lijsten.child("test")
+    random_karakter = str(random.randint(1,123748904123789483021980232))
+    lijsten = database_lijsten.child(random_karakter)
     lijsten.set({
         "hallo": {
-            "test": "test"
+            "lijst": stringa
         }
     })
-    time.sleep(3)
+    os.system("clear")
 
 def woorden_lijst_zelf_delen(naam):
     zeker = input("Weet je zeker als je het bestand " + naam + " wilt delen (y) of (n) : ")
