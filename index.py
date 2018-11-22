@@ -261,11 +261,8 @@ def bestand_overhoren():
 def woordenlijst_publish(naam):
     with open("woordenlijsten/{}".format(naam),"r+") as x:
         regeaa = x.readlines()
-        zonder_enter = []
-        for woord in regeaa:
-            woordtje = woord.replace("\n","")
-            zonder_enter.append(woordtje)
-        print(zonder_enter)
+        stringa = ''.join(regeaa)
+        print(stringa)
         x.close()
     time.sleep(3)
 
