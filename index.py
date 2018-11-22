@@ -259,8 +259,15 @@ def bestand_overhoren():
 
 
 def woordenlijst_publish(naam):
-    print(naam)
-    time.sleep(1)
+    with open("woordenlijsten/{}".format(naam),"r+") as x:
+        regeaa = x.readlines()
+        zonder_enter = []
+        for woord in regeaa:
+            woordtje = woord.replace("\n","")
+            zonder_enter.append(woordtje)
+        print(zonder_enter)
+        x.close()
+    time.sleep(3)
 
 def woorden_lijst_zelf_delen(naam):
     zeker = input("Weet je zeker als je het bestand " + naam + " wilt delen (y) of (n) : ")
