@@ -287,11 +287,17 @@ def bestanden_beschikbaar():
     alle = list(database_lijsten_.keys())
     for bestanden in alle:
         print(bestanden)
+
+def bestand_downloaden(naam):
+    de_lijst = database_lijsten.get()
+    print(de_lijst[naam])
     time.sleep(20)
 
 def lijst_importeren():
     os.system("clear")
     bestanden_beschikbaar()
+    welke = input("Welke bestand wil je gaan importeren: ")
+    bestand_downloaden(welke)
 
 def woorden_lijst_delen():
     os.system("clear")
