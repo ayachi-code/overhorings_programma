@@ -285,7 +285,8 @@ def woorden_lijst_zelf_delen(naam):
 def bestanden_beschikbaar():
     database_lijsten_ = database_lijsten.get()
     alle = list(database_lijsten_.keys())
-    print(alle)
+    for bestanden in alle:
+        print(bestanden)
     time.sleep(20)
 
 def lijst_importeren():
