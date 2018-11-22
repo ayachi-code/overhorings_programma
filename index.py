@@ -17,6 +17,7 @@ firebase_admin.initialize_app(cred, {
 })
 
 database = db.reference('tips')
+
 database_lijsten = db.reference('lijsten')
 
 
@@ -258,7 +259,6 @@ def bestand_overhoren():
         time.sleep(2)
         welkom_bestand_overhoren()
 
-
 def woordenlijst_publish(naam):
     welke = input("Hoe zal het bestand heten als je het bestand wilt downloaden: ")
     with open("woordenlijsten/{}".format(naam),"r+") as x:
@@ -280,7 +280,7 @@ def woorden_lijst_zelf_delen(naam):
         time.sleep(1)
         return
     else:
-        print("bestand bestata niet ")
+        print("bestand bestaat niet ")
 
 def bestanden_beschikbaar():
     database_lijsten_ = database_lijsten.get()
@@ -320,6 +320,8 @@ def woorden_lijst_delen():
             print("Bestand bestaat niet :( ")
             time.sleep(2)
             return False
+    elif welke == "/stop":
+        main()
     else:
         print("karakter bestaat niet probeer opnieuw")
         time.sleep(1)
