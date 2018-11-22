@@ -257,10 +257,15 @@ def bestand_overhoren():
         time.sleep(2)
         welkom_bestand_overhoren()
 
+
+def woordenlijst_publish(naam):
+    print(naam)
+    time.sleep(1)
+
 def woorden_lijst_zelf_delen(naam):
     zeker = input("Weet je zeker als je het bestand " + naam + " wilt delen (y) of (n) : ")
     if zeker == "y":
-        pass
+        woordenlijst_publish(naam)
     elif zeker == "n":
         print("Oke niet erg.. ")
         time.sleep(1)
