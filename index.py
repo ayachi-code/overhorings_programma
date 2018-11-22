@@ -260,12 +260,12 @@ def bestand_overhoren():
 
 
 def woordenlijst_publish(naam):
+    welke = input("Hoe zal het bestand heten als je het bestand wilt downloaden: ")
     with open("woordenlijsten/{}".format(naam),"r+") as x:
         regeaa = x.readlines()
         stringa = ''.join(regeaa)
         x.close()
-    random_karakter = str(random.randint(1,123748904123789483021980232))
-    lijsten = database_lijsten.child(random_karakter)
+    lijsten = database_lijsten.child(welke)
     lijsten.set({
         "hallo": {
             "lijst": stringa
