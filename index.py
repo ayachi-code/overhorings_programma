@@ -18,16 +18,6 @@ firebase_admin.initialize_app(cred, {
 
 database = db.reference('tips')
 
-def woorden_lijst_delen():
-    os.system("clear")
-    welke = input("(p) om te importeren en (v) een lijst te delen: ")
-    if welke == "p":
-        pass
-    elif welke == "v":
-        pass
-    else:
-        print("karakter bestaat niet probeer opnieuw")
-        time.sleep(1)
 
 def tipoftop_versturen(welke,zin):
     if zin:
@@ -266,6 +256,22 @@ def bestand_overhoren():
         print("hey bestand bestaat niet probeer het nog eens :) ")
         time.sleep(2)
         welkom_bestand_overhoren()
+
+def woorden_lijst_zelf_delen():
+    pass
+
+def woorden_lijst_delen():
+    os.system("clear")
+    welke = input("(p) om te importeren en (v) een lijst te delen: ")
+    if welke == "p":
+        pass
+    elif welke == "v":
+        os.system("clear")
+        bestanden_van_woordenlijst_printen("woordenlijsten")
+        welke = input("Welk bestand wil je gaan delen ? ")
+    else:
+        print("karakter bestaat niet probeer opnieuw")
+        time.sleep(1)
 
 def main():
     keuzen = welkom()
