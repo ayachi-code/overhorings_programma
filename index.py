@@ -284,11 +284,19 @@ def woorden_lijst_zelf_delen(naam):
     else:
         print("bestand bestata niet ")
 
+
+def bestanden_beschikbaar():
+    pass
+
+def lijst_importeren():
+    os.system("clear")
+    bestanden_beschikbaar()
+
 def woorden_lijst_delen():
     os.system("clear")
     welke = input("(p) om te importeren en (v) een lijst te delen: ")
     if welke == "p":
-        pass
+        lijst_importeren()
     elif welke == "v":
         os.system("clear")
         bestanden_van_woordenlijst_printen("woordenlijsten")
