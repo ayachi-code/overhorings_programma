@@ -257,8 +257,16 @@ def bestand_overhoren():
         time.sleep(2)
         welkom_bestand_overhoren()
 
-def woorden_lijst_zelf_delen():
-    pass
+def woorden_lijst_zelf_delen(naam):
+    zeker = input("Weet je zeker als je het bestand " + naam + " wilt delen (y) of (n) : ")
+    if zeker == "y":
+        pass
+    elif zeker == "n":
+        print("Oke niet erg.. ")
+        time.sleep(1)
+        return
+    else:
+        print("bestand bestata niet ")
 
 def woorden_lijst_delen():
     os.system("clear")
@@ -272,10 +280,11 @@ def woorden_lijst_delen():
         bestaat = bestaat_bestand(welke)
         if bestaat:
             print("Bestand word gedeelt")
-            time.sleep(10)
+            woorden_lijst_zelf_delen(welke)
         else:
             print("Bestand bestaat niet :( ")
-            time.sleep(10)
+            time.sleep(2)
+            return False
     else:
         print("karakter bestaat niet probeer opnieuw")
         time.sleep(1)
