@@ -17,6 +17,7 @@ firebase_admin.initialize_app(cred, {
 })
 
 database = db.reference('tips')
+database_lijsten = db.reference('lijsten')
 
 
 def tipoftop_versturen(welke,zin):
@@ -262,8 +263,13 @@ def woordenlijst_publish(naam):
     with open("woordenlijsten/{}".format(naam),"r+") as x:
         regeaa = x.readlines()
         stringa = ''.join(regeaa)
-        print(stringa)
         x.close()
+    lijsten = database_lijsten.child("test")
+    lijsten.set({
+        "hallo": {
+            "test": "test"
+        }
+    })
     time.sleep(3)
 
 def woorden_lijst_zelf_delen(naam):
