@@ -256,7 +256,8 @@ def bestand_overhoren():
         welkom_bestand_overhoren()
 
 def admin_tips():
-    print("test")
+    tips_en_tops = database.get()
+    print(tips_en_tops["100753620374930784104763942tip"]["tip"]["tip"])
     keuze = leesInput("Type /stop om terug tegaan: ")
 
 def admin_inloggen():
@@ -294,7 +295,3 @@ def main():
             continue      
 
 main()
-
-#database = db.reference('tips')
-#b = database.get()
-#print(b["100753620374930784104763942tip"]["tip"]["tip"])
