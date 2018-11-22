@@ -290,8 +290,12 @@ def bestanden_beschikbaar():
 
 def bestand_downloaden(naam):
     de_lijst = database_lijsten.get()
-    print(de_lijst[naam])
-    time.sleep(20)
+    data = de_lijst[naam]["lijst"]
+    with open("woordenlijsten/{}".format(naam),"w+") as v:
+        for woord in data:
+            v.write(woord)
+        v.close()
+    time.sleep(1)
 
 def lijst_importeren():
     os.system("clear")

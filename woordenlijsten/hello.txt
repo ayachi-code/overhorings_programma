@@ -1,3 +1,0 @@
-dutch=english
-hallo=hello
-waar=true
