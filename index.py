@@ -20,7 +20,6 @@ database = db.reference('tips')
 
 database_lijsten = db.reference('lijsten')
 
-
 def tipoftop_versturen(welke,zin):
     if zin:
         random_karakter = str(random.randint(1,123748904123789483021980232))
