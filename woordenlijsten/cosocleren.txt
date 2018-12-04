@@ -1,0 +1,4 @@
+nederlands=servisch
+kanker=rak
+goede morge=doberdan
+hallo=zdravo

@@ -6,7 +6,7 @@ import random
 import time 
 
 #initialiseer de firbase SDK
-cred = credentials.Certificate('secret.json')
+cred = credentials.Certificate('secret/secret.json')
 
 #Databse conecteren
 firebase_admin.initialize_app(cred, {
